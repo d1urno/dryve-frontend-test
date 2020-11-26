@@ -6,7 +6,8 @@
     "build": "typecheck . && vite build"
   },
   "dependencies": {
-    "vue": "^3.0.2"
+    "vue": "^3.0.2",
+    "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.2.1",
