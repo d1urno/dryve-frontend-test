@@ -110,34 +110,79 @@
       </section>
       <!-- End: Cars card -->
 
-      <!-- Top brands card -->
-      <section
-        class="col-span-2 px-6 pt-5 mb-auto bg-white border border-black rounded sm:col-span-1 border-opacity-10"
+      <div
+        class="col-span-2 lg:col-span-1 md:flex md:space-x-5 lg:block lg:space-x-0"
       >
-        <p class="mb-8 text-black text-opacity-80">Top intenções de compra</p>
-        <ul class="divide-y">
-          <li
-            v-for="intention in intentions"
-            :key="intention.id"
-            class="flex items-center justify-between py-4"
-          >
-            <figure class="flex items-center space-x-4">
-              <img
-                :src="intention.image"
-                :alt="intention.name"
-                :srcset="intention.hq"
-              />
-              <figcaption class="text-black text-opacity-80">
-                {{ intention.name }}
-              </figcaption>
-            </figure>
-            <p class="mr-10 text-black text-opacity-80">
-              {{ intention.quantity }}
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- End: Top brands card -->
+        <!-- Top brands card -->
+        <section
+          class="flex-1 px-6 pt-5 mb-5 bg-white border border-black rounded border-opacity-10"
+        >
+          <p class="mb-8 text-black text-opacity-80">Top intenções de compra</p>
+          <ul class="divide-y">
+            <li
+              v-for="intention in intentions"
+              :key="intention.id"
+              class="flex items-center justify-between py-4"
+            >
+              <figure class="flex items-center space-x-4">
+                <img
+                  :src="intention.image"
+                  :alt="intention.name"
+                  :srcset="intention.hq"
+                />
+                <figcaption class="text-black text-opacity-80">
+                  {{ intention.name }}
+                </figcaption>
+              </figure>
+              <p class="mr-10 text-black text-opacity-80">
+                {{ intention.quantity }}
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- End: Top brands card -->
+
+        <!-- Dryve pie chart card -->
+        <section
+          class="flex-1 px-6 py-5 mb-auto bg-white border border-black rounded border-opacity-10"
+        >
+          <p class="flex items-center mb-4 text-black text-opacity-80">
+            <span>Preços - Dryve x KBB</span>
+            <icon type="help" class="w-5 h-5 ml-2 text-black text-opacity-20" />
+          </p>
+          <figure class="flex items-center">
+            <pie-chart class="-m-3" />
+            <div
+              class="flex flex-col items-center justify-center flex-1 w-full"
+            >
+              <div class="ml-3">
+                <span class="block space-x-2 text-black text-opacity-80">
+                  <span
+                    class="inline-block w-2 h-2 mb-px bg-blue-500 rounded-full"
+                  />
+                  <span>Na média</span
+                  ><span class="text-xs text-gray-400">60%</span>
+                </span>
+                <span class="block space-x-2 text-black text-opacity-80">
+                  <span
+                    class="inline-block w-2 h-2 mb-px bg-red-500 rounded-full"
+                  />
+                  <span>Acima da média</span
+                  ><span class="text-xs text-gray-400">60%</span>
+                </span>
+                <span class="block space-x-2 text-black text-opacity-80">
+                  <span
+                    class="inline-block w-2 h-2 mb-px bg-yellow-500 rounded-full"
+                  />
+                  <span>Abaixo da média</span
+                  ><span class="text-xs text-gray-400">60%</span>
+                </span>
+              </div>
+            </div>
+          </figure>
+        </section>
+        <!-- End: Dryve pie chart card -->
+      </div>
     </div>
   </main>
 </template>
@@ -149,9 +194,10 @@ import CardCar from '../components/CardCar.vue'
 import { useStore } from '../store'
 import { CARS, FETCH_CARS, INTENTIONS } from '../store/store-constants'
 import { Car, Intention } from '../types'
+import PieChart from '../components/PieChart.vue'
 
 export default defineComponent({
-  components: { CardCar, Icon },
+  components: { PieChart, CardCar, Icon },
   setup() {
     const store = useStore()
     const cars = computed<Car[]>(() => store.getters[CARS]())
