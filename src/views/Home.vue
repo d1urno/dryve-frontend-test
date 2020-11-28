@@ -109,6 +109,35 @@
         <!-- End: Car list -->
       </section>
       <!-- End: Cars card -->
+
+      <!-- Top brands card -->
+      <section
+        class="col-span-2 px-6 pt-5 mb-auto bg-white border border-black rounded sm:col-span-1 border-opacity-10"
+      >
+        <p class="mb-8 text-black text-opacity-80">Top intenções de compra</p>
+        <ul class="divide-y">
+          <li
+            v-for="intention in intentions"
+            :key="intention.id"
+            class="flex items-center justify-between py-4"
+          >
+            <figure class="flex items-center space-x-4">
+              <img
+                :src="intention.image"
+                :alt="intention.name"
+                :srcset="intention.hq"
+              />
+              <figcaption class="text-black text-opacity-80">
+                {{ intention.name }}
+              </figcaption>
+            </figure>
+            <p class="mr-10 text-black text-opacity-80">
+              {{ intention.quantity }}
+            </p>
+          </li>
+        </ul>
+      </section>
+      <!-- End: Top brands card -->
     </div>
   </main>
 </template>
@@ -118,8 +147,8 @@ import { defineComponent, computed } from 'vue'
 import Icon from '../components/Icon.vue'
 import CardCar from '../components/CardCar.vue'
 import { useStore } from '../store'
-import { CARS, FETCH_CARS } from '../store/store-constants'
-import { Car } from '../types'
+import { CARS, FETCH_CARS, INTENTIONS } from '../store/store-constants'
+import { Car, Intention } from '../types'
 
 export default defineComponent({
   components: { CardCar, Icon },
@@ -128,7 +157,9 @@ export default defineComponent({
     const cars = computed<Car[]>(() => store.getters[CARS]())
     if (cars.value.length === 0) store.dispatch(FETCH_CARS)
 
-    return { cars }
+    const intentions = computed<Intention[]>(() => store.getters[INTENTIONS]())
+
+    return { cars, intentions }
   }
 })
 </script>
