@@ -95,7 +95,7 @@ export const store = createStore<State>({
 
   getters: {
     [STATUS]: (state) => state.status,
-    [CARS]: (state) => (size = 5, page = 1) =>
+    [CARS]: (state) => (size = 10, page = 1) =>
       state.cars.slice((page - 1) * size, page * size),
     [CLIENTS]: (state) => (size = 10, page = 1) =>
       state.clients.slice((page - 1) * size, page * size)
