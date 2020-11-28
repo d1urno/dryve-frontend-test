@@ -116,7 +116,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import Icon from '../components/Icon.vue'
-import CardCar from './CardCar.vue'
+import CardCar from '../components/CardCar.vue'
 import { useStore } from '../store'
 import { CARS, FETCH_CARS } from '../store/store-constants'
 import { Car } from '../types'
