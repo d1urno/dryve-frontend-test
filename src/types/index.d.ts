@@ -26,9 +26,12 @@ export interface Car {
 export interface Client {
   id: number
   name: string
+  last_name: string
   status: string
   email: string
   phone: string
+  extra_phone: string
+  cep: string
 }
 
 export interface Intention {
