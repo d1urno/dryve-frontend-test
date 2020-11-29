@@ -43,7 +43,7 @@
       <table class="relative w-full overflow-hidden">
         <thead>
           <tr class="text-left">
-            <th><input type="checkbox" /></th>
+            <th class="w-16"><input type="checkbox" /></th>
             <th class="opacity-50 w-80">Nome</th>
             <th class="w-64 opacity-50">Status</th>
             <th class="opacity-50 w-72">Telefone</th>
@@ -201,7 +201,7 @@ export default defineComponent({
 }
 
 th {
-  @apply py-5 pl-5 text-xs tracking-widest text-black uppercase border-b text-opacity-80;
+  @apply py-5 pl-5 text-xs tracking-widest text-black uppercase border-b text-opacity-80 whitespace-nowrap;
 }
 td {
   @apply py-5 pl-5 text-black border-b text-opacity-80 whitespace-nowrap;
