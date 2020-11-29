@@ -3,6 +3,7 @@
     <!-- Actions -->
     <div class="flex justify-between w-full mb-6">
       <div class="flex items-center w-full">
+        <!-- Filter -->
         <button
           type="button"
           class="flex items-center h-full px-3 space-x-2 bg-white border border-black rounded border-opacity-10"
@@ -10,6 +11,9 @@
           <icon type="filter" class="w-5 h-5 text-blue-600" />
           <span class="py-2 text-purple-500 sm:py-0">FILTRAR</span>
         </button>
+        <!-- End:Filter -->
+
+        <!-- Search field -->
         <label for="search" class="sr-only">Busca</label>
         <div class="relative flex items-center justify-end w-full max-w-xs">
           <input
@@ -25,6 +29,7 @@
             class="absolute w-6 h-6 mr-2 -my-4 text-black text-opacity-80"
           />
         </div>
+        <!-- End: Search field -->
       </div>
       <router-link
         to="/clientes/adicionar"
