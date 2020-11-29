@@ -1,5 +1,6 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
+import ClientsData from '../assets/clients-data.json'
 
 // define your typings for the store state
 export interface State {
