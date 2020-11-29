@@ -101,7 +101,7 @@
             <option value="20">20</option>
           </select>
           <p class="text-xs text-gray-400">
-            {{ start }}-{{ end }} de {{ totalClientsCount }}
+            {{ navigationText }}
           </p>
         </div>
         <div class="space-x-3">
@@ -148,6 +148,11 @@ export default defineComponent({
     const end = computed(() =>
       Math.min(start.value - 1 + clients.value.length, totalClientsCount.value)
     )
+    const navigationText = computed(() => {
+      return `${
+        totalClientsCount.value ? start.value + '-' + end.value : 0
+      } de ${totalClientsCount.value}`
+    })
 
     /**********************************
      *  Transitioned navigation feature
@@ -175,10 +180,7 @@ export default defineComponent({
     return {
       clients,
       items,
-      start,
-      end,
-      totalClientsCount,
-      page,
+      navigationText,
       transition,
       handlePrev,
       handleNext,
