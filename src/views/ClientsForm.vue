@@ -173,7 +173,10 @@ export default defineComponent({
 
     const onSubmit = () => {
       router.push('/clientes')
-      store.dispatch(ADD_CLIENT, payload.value)
+      // Add little delay to see list transitions
+      setTimeout(() => {
+        store.dispatch(ADD_CLIENT, payload.value)
+      }, 250)
     }
     return { onSubmit, isExtraPhone, payload }
   }
