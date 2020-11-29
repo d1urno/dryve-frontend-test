@@ -14,6 +14,7 @@
         <div class="relative flex items-center justify-end w-full max-w-xs">
           <input
             id="search"
+            v-model="query"
             type="search"
             inputmode="search"
             placeholder="Buscar por nome..."
@@ -119,10 +120,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
+import { defineComponent, computed, ref, watch } from 'vue'
 import Icon from '../components/Icon.vue'
 import { useStore } from '../store'
-import { CLIENTS, CLIENTS_LENGTH } from '../store/store-constants'
+import { CLIENTS } from '../store/store-constants'
 import { Client } from '../types'
 
 export default defineComponent({
@@ -130,16 +131,18 @@ export default defineComponent({
   setup() {
     const store = useStore()
 
-    // Get pagination
+    // Set controls
+    const query = ref('')
     const items = ref(10)
     const page = ref(1)
+
     const clients = computed<Client[]>(() =>
-      store.getters[CLIENTS](items.value, page.value)
+      store.getters[CLIENTS](query.value, items.value, page.value)
     )
 
     // Navigation display calculations
     const totalClientsCount = computed<number>(
-      () => store.getters[CLIENTS_LENGTH]
+      () => store.getters[CLIENTS](query.value).length
     )
     const start = computed(() => page.value * items.value - (items.value - 1))
     const end = computed(() =>
@@ -150,6 +153,8 @@ export default defineComponent({
      *  Transitioned navigation feature
      *********************************/
     const transition = ref('')
+    watch(query, () => (transition.value = 'zoom-fade'))
+
     const handleNext = () => {
       if (end.value === totalClientsCount.value) return
       transition.value = 'slide-fade-left'
@@ -177,7 +182,8 @@ export default defineComponent({
       transition,
       handlePrev,
       handleNext,
-      handleSizeChange
+      handleSizeChange,
+      query
     }
   }
 })
