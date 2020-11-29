@@ -65,18 +65,70 @@
         </div>
       </section>
       <!-- End: Top Card 3 -->
+
+      <!-- Cars card -->
+      <section
+        class="col-span-2 pt-5 bg-white border border-black rounded border-opacity-10"
+      >
+        <div class="flex justify-between px-6">
+          <p>Últimas avaliações</p>
+          <button type="button" class="flex pt-1 pl-2 -mt-1 -ml-2">
+            <span>Hoje</span>
+            <icon
+              type="arrow-down"
+              class="w-6 h-6 text-black text-opacity-50"
+            />
+          </button>
+        </div>
+
+        <!-- Car list -->
+        <div
+          class="flex px-6 py-5 text-xs tracking-widest text-black uppercase border-b opacity-50 text-opacity-80"
+        >
+          <p class="flex-1">Dados do veículo</p>
+          <div class="flex flex-1">
+            <p class="flex-1">Valor</p>
+            <p class="flex-1">Status</p>
+          </div>
+        </div>
+        <div class="overflow-y-auto divide-y c-list-max-height">
+          <card-car
+            v-for="car in cars"
+            :key="car.vehicle_uuid"
+            :car="car"
+            class="px-6"
+          />
+        </div>
+        <button
+          type="button"
+          class="flex items-center px-6 py-2 ml-auto text-sm text-blue-600"
+        >
+          <span>Ver tudo</span>
+          <icon type="arrow-right" class="w-6 h-6" />
+        </button>
+        <!-- End: Car list -->
+      </section>
+      <!-- End: Cars card -->
     </div>
   </main>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import Icon from '../components/Icon.vue'
+import CardCar from './CardCar.vue'
+import { useStore } from '../store'
+import { CARS, FETCH_CARS } from '../store/store-constants'
+import { Car } from '../types'
 
 export default defineComponent({
-  components: { Icon },
+  components: { CardCar, Icon },
   setup() {
-    return {}
+    const store = useStore()
+    const cars = computed<Car[]>(() => store.getters[CARS]())
+    if (cars.value.length === 0) store.dispatch(FETCH_CARS)
+
+    return { cars }
   }
 })
 </script>
