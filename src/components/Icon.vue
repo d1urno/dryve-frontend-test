@@ -13,7 +13,20 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 
 export default defineComponent({
   name: 'Icon',
-  components: {},
+  components: {
+    home: defineAsyncComponent(() => import('../assets/icons/home.vue')),
+    profile: defineAsyncComponent(() => import('../assets/icons/profile.vue')),
+    car: defineAsyncComponent(() => import('../assets/icons/car.vue')),
+    triangle: defineAsyncComponent(
+      () => import('../assets/icons/triangle.vue')
+    ),
+    wallet: defineAsyncComponent(() => import('../assets/icons/wallet.vue')),
+    exit: defineAsyncComponent(() => import('../assets/icons/exit.vue')),
+    search: defineAsyncComponent(() => import('../assets/icons/search.vue')),
+    notifications: defineAsyncComponent(
+      () => import('../assets/icons/notifications.vue')
+    )
+  },
   props: {
     type: {
       type: String,
