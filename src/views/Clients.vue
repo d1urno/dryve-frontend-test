@@ -83,8 +83,8 @@
         <!-- End: Table body -->
       </table>
       <!-- Footer -->
-      <footer class="flex items-center justify-between px-5 py-2">
-        <div class="flex items-baseline">
+      <footer class="items-center justify-between px-5 py-2 sm:flex">
+        <div class="flex items-baseline justify-center sm:justify-start">
           <label for="items" class="text-xs text-gray-400">
             Itens por página:
           </label>
@@ -104,11 +104,11 @@
             {{ navigationText }}
           </p>
         </div>
-        <div class="space-x-3">
-          <button type="button" class="w-6 h-6" @click="handlePrev">
+        <div class="flex justify-center space-x-3">
+          <button type="button" class="w-6 h-9" @click="handlePrev">
             <icon type="chevron-left" class="pt-1 text-black opacity-60" />
           </button>
-          <button type="button" class="w-6 h-6" @click="handleNext">
+          <button type="button" class="w-6 h-9" @click="handleNext">
             <icon type="chevron-right" class="pt-1 text-black opacity-60" />
           </button>
         </div>
