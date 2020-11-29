@@ -8,7 +8,8 @@
       hover:bg-blue-50 opacity-10"
       :class="{
         'hover:text-blue-600 hover:text-opacity-100 opacity-100 group': !disabled,
-        'pointer-events-none': disabled
+        'pointer-events-none': disabled,
+        'text-blue-600 text-opacity-100': $route.path === to
       }"
     >
       <icon
@@ -16,7 +17,8 @@
         class="w-6 h-6 text-black
         group-hover:text-blue-600 group-hover:opacity-100"
         :class="{
-          'text-opacity-30': disabled
+          'text-opacity-30': !disabled && $route.path !== to,
+          'text-blue-600': $route.path === to
         }"
       />
       <span :class="{ hidden: !isOpen }">{{ label }}</span>
