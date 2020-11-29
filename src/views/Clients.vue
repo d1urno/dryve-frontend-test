@@ -1,8 +1,8 @@
 <template>
   <main class="p-6 bg-gray-100">
     <!-- Actions -->
-    <div class="flex justify-between w-full mb-6">
-      <div class="flex items-center w-full">
+    <div class="justify-between w-full mb-6 sm:flex">
+      <div class="flex items-center w-full mb-5 sm:mb-0">
         <!-- Filter -->
         <button
           type="button"
@@ -15,7 +15,9 @@
 
         <!-- Search field -->
         <label for="search" class="sr-only">Busca</label>
-        <div class="relative flex items-center justify-end w-full max-w-xs">
+        <div
+          class="relative flex items-center justify-end w-full max-w-xs sm:mb-0"
+        >
           <input
             id="search"
             v-model="query"
@@ -36,7 +38,7 @@
         class="flex inline-flex items-center px-5 text-white bg-purple-700 rounded"
       >
         <icon type="add" class="w-3 h-3 text-white" />
-        <span class="ml-2">ADICIONAR</span>
+        <span class="py-2 ml-2">ADICIONAR</span>
       </button>
     </div>
     <!-- End: Actions -->
