@@ -28,73 +28,32 @@
 
     <!-- Navigation -->
     <ul class="w-56 mx-3 space-y-1">
-      <li>
-        <!-- prettier-ignore -->
-        <router-link
-          to="/"
-          class="flex items-center px-3 py-2 space-x-6 text-sm group
-          font-bold rounded-sm text-black text-opacity-80
-          hover:bg-blue-50 hover:text-blue-600 hover:text-opacity-100"
-        >
-          <!-- prettier-ignore -->
-          <icon type="home" class="w-6 h-6 text-black text-opacity-30
-          group-hover:text-blue-600 group-hover:opacity-100" />
-          <span :class="{ hidden: !isOpen }">Início</span>
-        </router-link>
-      </li>
-      <li>
-        <!-- prettier-ignore -->
-        <router-link
-          to="/"
-          class="flex items-center px-3 py-2 space-x-6 text-sm group
-          font-bold rounded-sm text-black text-opacity-80
-          hover:bg-blue-50 hover:text-blue-600 hover:text-opacity-100"
-        >
-          <!-- prettier-ignore -->
-          <icon type="profile" class="w-6 h-6 text-black text-opacity-30
-          group-hover:text-blue-600 group-hover:opacity-100" />
-          <span :class="{ hidden: !isOpen }">Clientes</span>
-        </router-link>
-      </li>
-      <li>
-        <!-- prettier-ignore -->
-        <router-link
-          to="/"
-          class="flex items-center px-3 py-2 space-x-6 text-sm group
-          font-bold rounded-sm text-black text-opacity-80
-          hover:bg-blue-50 hover:text-blue-600 hover:text-opacity-100"
-        >
-          <!-- prettier-ignore -->
-          <icon type="car" class="w-6 h-6 text-black text-opacity-30
-          group-hover:text-blue-600 group-hover:opacity-100" />
-          <span :class="{ hidden: !isOpen }">Veículos</span>
-        </router-link>
-      </li>
-      <li>
-        <!-- prettier-ignore -->
-        <router-link
-          to="/"
-          class="flex items-center px-3 py-2 space-x-6 text-sm group
-          font-bold rounded-sm text-black text-opacity-80
-          hover:bg-blue-50 hover:text-blue-600 hover:text-opacity-100"
-        >
-          <!-- prettier-ignore -->
-          <icon type="triangle" class="w-6 h-6 text-black text-opacity-30
-          group-hover:text-blue-600 group-hover:opacity-100" />
-          <span :class="{ hidden: !isOpen }">Triangulação</span>
-        </router-link>
-      </li>
-      <li>
-        <!-- prettier-ignore -->
-        <router-link
-          to="/"
-          class="flex items-center px-3 py-2 space-x-6 text-sm
-          font-bold rounded-sm text-black text-opacity-80 opacity-20"
-        >
-          <icon type="wallet" class="w-6 h-6 text-black opacity-50" />
-          <span :class="{ hidden: !isOpen }">Financeiro</span>
-        </router-link>
-      </li>
+      <app-side-bar-link :is-open="isOpen" label="Início" icon="home" to="/" />
+      <app-side-bar-link
+        :is-open="isOpen"
+        label="Clientes"
+        icon="profile"
+        to="/clientes"
+      />
+      <app-side-bar-link
+        :is-open="isOpen"
+        label="Veículos"
+        icon="car"
+        to="/veiculos"
+      />
+      <app-side-bar-link
+        :is-open="isOpen"
+        label="Triangulação"
+        icon="triangle"
+        to="/triangulacao"
+      />
+      <app-side-bar-link
+        :is-open="isOpen"
+        label="Financeiro"
+        icon="wallet"
+        disabled
+        to="/financeiro"
+      />
     </ul>
     <!-- End: Navigation -->
   </aside>
@@ -103,10 +62,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Icon from './Icon.vue'
+import AppSideBarLink from './AppSideBarLink.vue'
 
 export default defineComponent({
   name: 'AppSideBar',
-  components: { Icon },
+  components: { AppSideBarLink, Icon },
   props: {
     isOpen: {
       type: Boolean,
