@@ -62,7 +62,7 @@
         <transition-group :name="transition" tag="tbody">
           <tr v-for="client in clients" :key="client.id">
             <td class="border-b"><input type="checkbox" /></td>
-            <td>{{ client.name }}</td>
+            <td>{{ `${client.name} ${client.last_name}` }}</td>
             <td>
               <p
                 class="w-24 py-2 -my-2 text-xs text-center text-gray-500 bg-gray-100 rounded-full"
