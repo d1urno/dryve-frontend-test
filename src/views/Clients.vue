@@ -199,6 +199,13 @@ export default defineComponent({
 .c-list-max-height {
   max-height: 35rem;
 }
+/* Remove default clear icon from input */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
 
 th {
   @apply py-5 pl-5 text-xs tracking-widest text-black uppercase border-b text-opacity-80 whitespace-nowrap;
