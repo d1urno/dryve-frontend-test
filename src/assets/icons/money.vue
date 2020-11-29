@@ -1,0 +1,4 @@
+<template>
+  <!--prettier-ignore -->
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" viewBox="0 0 30 30"><defs><path id="money-a" d="M7.733 10.533c-3.026-.786-4-1.6-4-2.866 0-1.454 1.347-2.467 3.6-2.467 2.374 0 3.254 1.133 3.334 2.8h2.946c-.093-2.293-1.493-4.4-4.28-5.08V0h-4v2.88C2.747 3.44.667 5.12.667 7.693c0 3.08 2.546 4.614 6.266 5.507 3.334.8 4 1.973 4 3.213 0 .92-.653 2.387-3.6 2.387-2.746 0-3.826-1.227-3.973-2.8H.427c.16 2.92 2.346 4.56 4.906 5.107V24h4v-2.867c2.6-.493 4.667-2 4.667-4.733 0-3.787-3.24-5.08-6.267-5.867z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(9 3)"><mask id="money-b" fill="#fff"><use xlink:href="#money-a"/></mask><g fill="currentColor" mask="url(#money-b)"><path d="M-25.333-21.333h66.667v66.667h-66.667z"/></g></g></svg>
+</template>
