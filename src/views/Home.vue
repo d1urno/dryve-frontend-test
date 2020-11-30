@@ -228,6 +228,6 @@ export default defineComponent({
   height: 64px;
 }
 .c-list-max-height {
-  max-height: 35rem;
+  max-height: 33rem;
 }
 </style>
