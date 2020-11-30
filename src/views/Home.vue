@@ -159,8 +159,11 @@
           class="flex-1 px-6 py-5 mb-auto bg-white border border-black rounded border-opacity-10"
         >
           <p class="flex items-center mb-5 text-sm text-black text-opacity-80">
-            <span>Preços - Dryve x KBB</span>
-            <icon type="help" class="w-5 h-5 ml-2 text-black text-opacity-20" />
+            <span class="inline-block mr-1">Preços - Dryve x KBB</span>
+            <icon
+              type="help"
+              class="w-4 h-4 -mt-px text-black text-opacity-20"
+            />
           </p>
           <figure class="flex items-center">
             <pie-chart class="-m-3" />
@@ -235,6 +238,6 @@ export default defineComponent({
   @apply w-2 bg-white;
 }
 .c-custom-bar::-webkit-scrollbar-thumb {
-  @apply bg-black bg-opacity-10 rounded;
+  @apply bg-black rounded bg-opacity-10;
 }
 </style>
