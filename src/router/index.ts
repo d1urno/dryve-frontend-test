@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Clients from '../views/Clients.vue'
+import ClientsForm from '../views/ClientsForm.vue'
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +15,11 @@ export const router = createRouter({
       path: '/clientes',
       name: 'clients',
       component: Clients
+    },
+    {
+      path: '/clientes/adicionar',
+      name: 'add',
+      component: ClientsForm
     }
   ]
 })

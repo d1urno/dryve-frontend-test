@@ -39,7 +39,7 @@
       >
         <icon type="add" class="w-3 h-3 text-white" />
         <span class="py-2 ml-2">ADICIONAR</span>
-      </button>
+      </router-link>
     </div>
     <!-- End: Actions -->
 
