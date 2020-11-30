@@ -8,14 +8,14 @@
         class="rounded ring-1 ring-black ring-opacity-20 c-img-dimensions"
       />
       <figcaption class="ml-3">
-        <p class="font-bold leading-tight text-black">
+        <p class="text-xs font-bold leading-tight text-black">
           {{ `${car.brand_name} ${car.model_name}` }}
         </p>
-        <p class="text-xs text-gray-400">{{ car.version_name }}</p>
-        <p class="text-xs text-gray-400">
+        <p class="text-gray-400 text-tiny">{{ car.version_name }}</p>
+        <p class="text-gray-400 text-tiny">
           {{ `${car.model_year} - ${car.fuel_type}` }}
         </p>
-        <p class="text-xs text-gray-400">
+        <p class="text-gray-400 text-tiny">
           {{ `${car.transmission_type} - ${formatNumber(car.mileage)} KM` }}
         </p>
       </figcaption>
@@ -27,20 +27,24 @@
       <div
         class="flex items-baseline justify-center flex-1 py-3 mt-3 md:my-auto md:block md:py-0"
       >
-        <p class="px-2 text-xs leading-none text-gray-400 md:px-0">ANÚNCIO</p>
-        <p class="text-sm font-bold md:mb-2">
+        <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">ANÚNCIO</p>
+        <p class="text-xs font-bold md:mb-1">
           R$ {{ formatPrice(car.ad_selling_price) }}
         </p>
-        <span class="ml-2 text-xs leading-none text-gray-400 md:hidden">-</span>
-        <p class="px-2 text-xs leading-none text-gray-400 md:px-0">
+        <span class="ml-2 leading-none text-gray-400 text-tiny md:hidden"
+          >-</span
+        >
+        <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
           MÍNIMO ACEITO
         </p>
-        <p class="text-sm text-gray-400">
+        <p class="text-xs text-gray-400">
           R$ {{ formatPrice(car.ad_selling_price * 0.97) }}
         </p>
       </div>
       <div class="flex-1 my-auto text-center">
-        <p class="px-4 py-2 mb-3 text-xs text-gray-500 rounded-full bg-blue-50">
+        <p
+          class="px-4 py-2 mb-2 text-xs text-gray-500 rounded-full whitespace-nowrap bg-blue-50"
+        >
           Aguardando precificação
         </p>
         <time class="text-xs text-gray-400">18/04/2020 às 14:35</time>
