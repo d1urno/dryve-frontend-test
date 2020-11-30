@@ -101,7 +101,7 @@
             <p class="w-6/12">Status</p>
           </div>
         </div>
-        <div class="overflow-y-auto divide-y c-list-max-height">
+        <div class="overflow-y-auto divide-y c-list-max-height c-custom-bar">
           <card-car
             v-for="car in cars"
             :key="car.vehicle_uuid"
@@ -229,5 +229,12 @@ export default defineComponent({
 }
 .c-list-max-height {
   max-height: 33rem;
+}
+/* Works on Chrome/Edge/Safari */
+.c-custom-bar::-webkit-scrollbar {
+  @apply w-2 bg-white;
+}
+.c-custom-bar::-webkit-scrollbar-thumb {
+  @apply bg-black bg-opacity-10 rounded;
 }
 </style>
