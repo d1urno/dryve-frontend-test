@@ -5,7 +5,7 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 sm:col-span-1"
       >
-        <p class="text-xs text-black opacity-50 text-opacity-80">
+        <p class="text-xs tracking-widest text-black text-opacity-50">
           AVALIAÇÕES HOJE
         </p>
         <div class="flex items-center justify-between">
@@ -20,9 +20,7 @@
           <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
           <div class="flex items-baseline">
             <p class="text-sm text-purple-500">36%</p>
-            <p class="ml-2 text-xs text-black opacity-50 text-opacity-80">
-              desde ontem
-            </p>
+            <p class="ml-2 text-xs text-black text-opacity-50">desde ontem</p>
           </div>
         </div>
       </section>
@@ -32,7 +30,7 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 sm:col-span-1"
       >
-        <p class="text-xs text-black opacity-50 text-opacity-80">
+        <p class="text-xs tracking-widest text-black text-opacity-50">
           CARROS PUBLICADOS
         </p>
         <div class="flex items-center justify-between">
@@ -47,9 +45,7 @@
           <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
           <div class="flex items-baseline">
             <p class="text-sm text-purple-500">4%</p>
-            <p class="ml-2 text-xs text-black opacity-50 text-opacity-80">
-              este mês
-            </p>
+            <p class="ml-2 text-xs text-black text-opacity-50">este mês</p>
           </div>
         </div>
       </section>
@@ -59,7 +55,7 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 md:col-span-1"
       >
-        <p class="text-xs text-black opacity-50 text-opacity-80">
+        <p class="text-xs tracking-widest text-black text-opacity-50">
           TICKET MÉDIO DO ESTOQUE
         </p>
         <div class="flex items-center justify-between">
@@ -74,9 +70,7 @@
           <icon type="arrow-down" class="w-5 h-5 text-red-500" />
           <div class="flex items-baseline">
             <p class="text-sm text-red-500">6%</p>
-            <p class="ml-2 text-xs text-black opacity-50 text-opacity-80">
-              este mês
-            </p>
+            <p class="ml-2 text-xs text-black text-opacity-50">este mês</p>
           </div>
         </div>
       </section>
