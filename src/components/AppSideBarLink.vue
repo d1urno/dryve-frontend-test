@@ -5,7 +5,7 @@
       :to="to"
       class="flex items-center px-3 py-2 space-x-6 text-sm
       font-bold rounded-sm text-black text-opacity-80
-      hover:bg-blue-50 opacity-10"
+      hover:bg-blue-50 opacity-20"
       :class="{
         'hover:text-blue-600 hover:text-opacity-100 opacity-100 group': !disabled,
         'pointer-events-none': disabled,
@@ -18,7 +18,8 @@
         group-hover:text-blue-600 group-hover:opacity-100"
         :class="{
           'text-opacity-30': !disabled && $route.path !== to,
-          'text-blue-600': $route.path === to
+          'text-blue-600': $route.path === to,
+          'opacity-70': disabled
         }"
       />
       <span :class="{ hidden: !isOpen }">{{ label }}</span>
