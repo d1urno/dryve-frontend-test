@@ -32,6 +32,12 @@ export interface Client {
   phone: string
   extra_phone: string
   cep: string
+  avenue: string
+  number: string
+  complement: string
+  neighbourhood: string
+  city: string
+  state: string
 }
 
 export interface Intention {
