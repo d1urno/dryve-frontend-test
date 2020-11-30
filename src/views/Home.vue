@@ -158,7 +158,7 @@
         <section
           class="flex-1 px-6 py-5 mb-auto bg-white border border-black rounded border-opacity-10"
         >
-          <p class="flex items-center mb-4 text-black text-opacity-80">
+          <p class="flex items-center mb-5 text-sm text-black text-opacity-80">
             <span>Preços - Dryve x KBB</span>
             <icon type="help" class="w-5 h-5 ml-2 text-black text-opacity-20" />
           </p>
@@ -167,7 +167,7 @@
             <div
               class="flex flex-col items-center justify-center flex-1 w-full"
             >
-              <div class="ml-3">
+              <div class="ml-3 text-sm">
                 <span class="block space-x-2 text-black text-opacity-80">
                   <span
                     class="inline-block w-2 h-2 mb-px bg-blue-500 rounded-full"
