@@ -64,7 +64,11 @@
               v-model="payload.phone"
               type="text"
               placeholder="Telefone"
+              minlength="15"
+              maxlength="15"
               required
+              @keypress="debouncedPhoneMask('phone')"
+              @blur="debouncedPhoneMask('phone')"
             />
           </label>
           <div v-if="!isExtraPhone" class="flex-1 my-auto">
@@ -82,7 +86,11 @@
               v-model="payload.extra_phone"
               type="text"
               placeholder="Telefone"
+              minlength="15"
+              maxlength="15"
               required
+              @keypress="debouncedPhoneMask('extra_phone')"
+              @blur="debouncedPhoneMask('extra_phone')"
             />
           </label>
         </div>
@@ -278,7 +286,43 @@ export default defineComponent({
       }
     }
 
-    return { onSubmit, isExtraPhone, payload, cep, number, fetchCep }
+    /**************************************
+     *  Phone mask feature
+     **************************************/
+    const debouncedPhoneMask = (field: string) => {
+      setTimeout(() => {
+        const v = maskPhone(payload.value[field])
+        if (v != payload.value[field]) {
+          payload.value[field] = v
+        }
+      }, 1)
+    }
+
+    const maskPhone = (v: string) => {
+      if (!v.length) return ''
+      let r = v.replace(/\D/g, '')
+      r = r.replace(/^0/, '')
+      if (r.length > 10) {
+        r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, '($1) $2-$3')
+      } else if (r.length > 5) {
+        r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, '($1) $2-$3')
+      } else if (r.length > 2) {
+        r = r.replace(/^(\d\d)(\d{0,5})/, '($1) $2')
+      } else {
+        r = r.replace(/^(\d*)/, '($1')
+      }
+      return r
+    }
+
+    return {
+      onSubmit,
+      isExtraPhone,
+      payload,
+      cep,
+      number,
+      fetchCep,
+      debouncedPhoneMask
+    }
   }
 })
 </script>
