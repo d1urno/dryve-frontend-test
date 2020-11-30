@@ -73,7 +73,7 @@
           </label>
           <div v-if="!isExtraPhone" class="flex-1 my-auto">
             <button
-              class="px-2 py-2 -m-2 text-left text-blue-600"
+              class="px-2 py-2 -m-2 text-sm text-left text-blue-600"
               type="button"
               @click="isExtraPhone = true"
             >
