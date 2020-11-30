@@ -9,7 +9,7 @@
           class="flex items-center h-full px-3 space-x-2 bg-white border border-black rounded border-opacity-10"
         >
           <icon type="filter" class="w-5 h-5 text-blue-600" />
-          <span class="py-2 text-purple-500 sm:py-0">FILTRAR</span>
+          <span class="py-2 text-sm text-purple-500 sm:py-0">FILTRAR</span>
         </button>
         <!-- End:Filter -->
 
@@ -38,7 +38,7 @@
         class="flex inline-flex items-center px-5 text-white bg-purple-700 rounded"
       >
         <icon type="add" class="w-3 h-3 text-white" />
-        <span class="py-2 ml-2">ADICIONAR</span>
+        <span class="py-2 ml-2 text-sm">ADICIONAR</span>
       </router-link>
     </div>
     <!-- End: Actions -->
@@ -51,10 +51,10 @@
         <thead>
           <tr class="text-left">
             <th class="w-16"><input type="checkbox" /></th>
-            <th class="opacity-50 w-80">Nome</th>
-            <th class="w-64 opacity-50">Status</th>
-            <th class="opacity-50 w-72">Telefone</th>
-            <th class="opacity-50">E-mail</th>
+            <th class="w-80">Nome</th>
+            <th class="w-64">Status</th>
+            <th class="w-72">Telefone</th>
+            <th>E-mail</th>
             <th></th>
           </tr>
         </thead>
@@ -99,7 +99,7 @@
             id="items"
             :value="items"
             name="items"
-            class="w-12 p-0 ml-2 border-none focus:ring-0"
+            class="w-12 p-0 ml-2 border-none text-sm focus:ring-0"
             @change="handleSizeChange"
           >
             <option value="5">5</option>
@@ -222,10 +222,10 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 th {
-  @apply py-5 pl-5 text-xs tracking-widest text-black uppercase border-b text-opacity-80 whitespace-nowrap;
+  @apply py-5 pl-5 tracking-widest text-black uppercase border-b text-opacity-40 text-tiny whitespace-nowrap;
 }
 td {
-  @apply py-5 pl-5 text-black border-b text-opacity-80 whitespace-nowrap;
+  @apply py-5 pl-5 text-sm text-black border-b text-opacity-80 whitespace-nowrap;
 }
 
 .slide-fade-left-enter-from {
