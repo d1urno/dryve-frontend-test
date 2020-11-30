@@ -8,7 +8,7 @@
   />
   <app-nav-bar class="absolute inset-0 h-16 ml-20" />
   <div
-    class="flex flex-col mt-16 ml-20 overflow-x-hidden overflow-y-auto border-r-2 c-content"
+    class="flex flex-col mt-16 ml-20 overflow-x-hidden overflow-y-auto c-content"
   >
     <router-view v-slot="{ Component }" class="flex-1">
       <transition name="scale" mode="out-in">

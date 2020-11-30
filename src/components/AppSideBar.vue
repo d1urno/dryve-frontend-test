@@ -1,7 +1,5 @@
 <template>
-  <aside
-    class="pt-8 space-y-5 overflow-x-hidden bg-white border-l-2 border-r-2"
-  >
+  <aside class="pt-8 space-y-5 overflow-x-hidden bg-white border-r">
     <figure class="flex items-center w-56 space-x-3">
       <!-- prettier-ignore -->
       <img

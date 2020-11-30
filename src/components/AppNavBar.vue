@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex items-center justify-between px-6 bg-white border-b-2 border-r-2"
-  >
+  <div class="flex items-center justify-between px-6 bg-white border-b">
     <router-link to="/" class="flex items-center space-x-2">
       <img src="/src/assets/logo.svg" alt="" />
       <span class="mt-2 -mb-1 text-xs text-gray-400 uppercase font-body">
