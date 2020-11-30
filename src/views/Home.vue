@@ -5,7 +5,9 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 sm:col-span-1"
       >
-        <p class="text-black opacity-50 text-opacity-80">AVALIAÇÕES HOJE</p>
+        <p class="text-xs text-black opacity-50 text-opacity-80">
+          AVALIAÇÕES HOJE
+        </p>
         <div class="flex items-center justify-between">
           <p class="py-2 text-4xl text-black text-opacity-80">29</p>
           <span
@@ -14,10 +16,14 @@
             <icon type="car" class="w-10 h-10 text-blue-600" />
           </span>
         </div>
-        <div class="flex">
-          <icon type="arrow-up" class="w-6 h-6 -ml-1 text-blue-600" />
-          <p class="text-purple-500">36%</p>
-          <p class="ml-2 text-black opacity-50 text-opacity-80">desde ontem</p>
+        <div class="flex items-center -ml-1">
+          <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
+          <div class="flex items-baseline">
+            <p class="text-sm text-purple-500">36%</p>
+            <p class="ml-2 text-xs text-black opacity-50 text-opacity-80">
+              desde ontem
+            </p>
+          </div>
         </div>
       </section>
       <!-- End: Top Card 1 -->
@@ -26,7 +32,9 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 sm:col-span-1"
       >
-        <p class="text-black opacity-50 text-opacity-80">CARROS PUBLICADOS</p>
+        <p class="text-xs text-black opacity-50 text-opacity-80">
+          CARROS PUBLICADOS
+        </p>
         <div class="flex items-center justify-between">
           <p class="py-2 text-4xl text-black text-opacity-80">397</p>
           <span
@@ -35,10 +43,14 @@
             <icon type="devices" class="w-10 h-10 text-blue-600" />
           </span>
         </div>
-        <div class="flex">
-          <icon type="arrow-up" class="w-6 h-6 -ml-1 text-blue-600" />
-          <p class="text-purple-500">4%</p>
-          <p class="ml-2 text-black opacity-50 text-opacity-80">este mês</p>
+        <div class="flex items-center -ml-1">
+          <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
+          <div class="flex items-baseline">
+            <p class="text-sm text-purple-500">4%</p>
+            <p class="ml-2 text-xs text-black opacity-50 text-opacity-80">
+              este mês
+            </p>
+          </div>
         </div>
       </section>
       <!-- End: Top Card 2 -->
@@ -47,7 +59,7 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 md:col-span-1"
       >
-        <p class="text-black opacity-50 text-opacity-80">
+        <p class="text-xs text-black opacity-50 text-opacity-80">
           TICKET MÉDIO DO ESTOQUE
         </p>
         <div class="flex items-center justify-between">
@@ -58,10 +70,14 @@
             <icon type="money" class="w-10 h-10 text-blue-600" />
           </span>
         </div>
-        <div class="flex">
-          <icon type="arrow-down" class="w-6 h-6 mt-px -ml-1 text-red-500" />
-          <p class="text-red-500">6%</p>
-          <p class="ml-2 text-black opacity-50 text-opacity-80">este mês</p>
+        <div class="flex items-center -ml-1">
+          <icon type="arrow-down" class="w-5 h-5 text-red-500" />
+          <div class="flex items-baseline">
+            <p class="text-sm text-red-500">6%</p>
+            <p class="ml-2 text-xs text-black opacity-50 text-opacity-80">
+              este mês
+            </p>
+          </div>
         </div>
       </section>
       <!-- End: Top Card 3 -->
