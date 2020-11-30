@@ -7,8 +7,14 @@
     @mouseout="isOpen = false"
   />
   <app-nav-bar class="absolute inset-0 h-16 ml-20" />
-  <div class="flex flex-col mt-16 ml-20 overflow-y-auto border-r-2 c-content">
-    <router-view class="flex-1" />
+  <div
+    class="flex flex-col mt-16 ml-20 overflow-x-hidden overflow-y-auto border-r-2 c-content"
+  >
+    <router-view v-slot="{ Component }" class="flex-1">
+      <transition name="scale" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <AppFooter class="h-16" />
   </div>
 </template>
@@ -30,5 +36,15 @@ export default defineComponent({
 .c-content {
   max-height: calc(100vh - theme('spacing.16'));
   height: calc(100vh - theme('spacing.16'));
+}
+.scale-enter-from {
+  @apply transform scale-105 opacity-0;
+}
+.scale-leave-to {
+  @apply transform scale-105 opacity-0;
+}
+.scale-leave-active,
+.scale-enter-active {
+  @apply transition duration-300 origin-top;
 }
 </style>
