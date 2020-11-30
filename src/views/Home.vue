@@ -95,10 +95,10 @@
         <div
           class="flex px-6 py-5 tracking-widest text-black text-opacity-50 uppercase border-b text-tiny"
         >
-          <p class="flex-1">Dados do veículo</p>
-          <div class="flex flex-1">
-            <p class="flex-1">Valor</p>
-            <p class="flex-1">Status</p>
+          <p class="w-7/12">Dados do veículo</p>
+          <div class="flex w-6/12">
+            <p class="w-6/12">Valor</p>
+            <p class="w-6/12">Status</p>
           </div>
         </div>
         <div class="overflow-y-auto divide-y c-list-max-height">

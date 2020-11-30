@@ -1,7 +1,7 @@
 <template>
   <div class="py-5 md:flex">
     <!-- Car data -->
-    <figure class="flex flex-1 my-auto">
+    <figure class="flex w-7/12 my-auto">
       <img
         :src="car.image"
         :alt="`${car.brand_name} ${car.model_name}`"
@@ -23,7 +23,7 @@
     <!-- End: Car data -->
 
     <!-- Announce data -->
-    <div class="flex-1 md:flex">
+    <div class="w-6/12 md:flex">
       <div
         class="flex items-baseline justify-center flex-1 py-3 mt-3 md:my-auto md:block md:py-0"
       >
