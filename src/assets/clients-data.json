@@ -7,7 +7,13 @@
     "email": "ph.mattos@gmail.com",
     "phone": "(16) 99653-8899",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 11,
@@ -17,7 +23,13 @@
     "email": "jumartins.silva@hotmail.com",
     "phone": "(16) 99819-3112",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 10,
@@ -27,7 +39,13 @@
     "email": "luisrocha@yahoo.com.br",
     "phone": "(16) 99776-9290",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 9,
@@ -37,7 +55,13 @@
     "email": "a.vieira@uol.com.br",
     "phone": "(16) 99664-0187",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 8,
@@ -47,7 +71,13 @@
     "email": "felipe_alves@hotmail.com",
     "phone": "(16) 99660-7765",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 7,
@@ -57,7 +87,13 @@
     "email": "robertavianna@gmail.com",
     "phone": "(16) 99765-2233",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 6,
@@ -67,7 +103,13 @@
     "email": "silvia.pereira@outlook.com",
     "phone": "(16) 99642-8721",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 5,
@@ -77,7 +119,13 @@
     "email": "eduoliveira@hotmail.com",
     "phone": "(16) 99872-3254",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 4,
@@ -87,7 +135,13 @@
     "email": "maria.ss@uol.com.br",
     "phone": "(16) 99443-9986",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 3,
@@ -97,7 +151,13 @@
     "email": "rrc@gmail.com",
     "phone": "(16) 99876-0012",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 2,
@@ -107,7 +167,13 @@
     "email": "georgia.young@example.com",
     "phone": "(16) 55530-6011",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   },
   {
     "id": 1,
@@ -117,6 +183,12 @@
     "email": "pedrosal@example.com",
     "phone": "(16) 56531-5618",
     "extra_phone": "",
-    "cep": "11674-771"
+    "cep": "11674-771",
+    "avenue": "",
+    "number": "",
+    "complement": "",
+    "neighbourhood": "",
+    "city": "",
+    "state": ""
   }
 ]
