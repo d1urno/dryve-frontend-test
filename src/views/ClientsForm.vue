@@ -89,40 +89,79 @@
         <label for="cep">
           <input
             id="cep"
+            ref="cep"
             v-model="payload.cep"
             type="text"
             placeholder="CEP"
+            size="10"
+            maxlength="9"
             required
+            @blur="fetchCep"
           />
         </label>
-        <label class="col-span-2 opacity-40" for="address">
-          <input id="address" type="text" placeholder="Endereço" disabled />
+        <label
+          :class="{ 'opacity-50': !payload.avenue }"
+          class="col-span-2"
+          for="address"
+        >
+          <input
+            id="address"
+            v-model="payload.avenue"
+            type="text"
+            placeholder="Endereço"
+            disabled
+          />
         </label>
-        <label class="opacity-50" for="number">
+        <label :class="{ 'opacity-50': !payload.avenue }" for="number">
           <input
             id="number"
+            ref="number"
+            v-model="payload.number"
             type="text"
             placeholder="Número"
             required
-            disabled
+            :disabled="!payload.avenue"
           />
         </label>
-        <label class="opacity-50" for="complement">
+        <label :class="{ 'opacity-50': !payload.avenue }" for="complement">
           <input
             id="complement"
+            v-model="payload.complement"
             type="text"
             placeholder="Complemento"
+            :disabled="!payload.avenue"
+          />
+        </label>
+        <label
+          class="col-span-2"
+          :class="{ 'opacity-50': !payload.neighbourhood }"
+          for="neighbourhood"
+        >
+          <input
+            id="neighbourhood"
+            v-model="payload.neighbourhood"
+            type="text"
+            placeholder="Bairro"
             disabled
           />
         </label>
-        <label class="col-span-2 opacity-50" for="neighbourhood">
-          <input id="neighbourhood" type="text" placeholder="Bairro" disabled />
+        <label :class="{ 'opacity-50': !payload.city }" for="city">
+          <input
+            id="city"
+            v-model="payload.city"
+            type="text"
+            placeholder="Cidade"
+            disabled
+          />
         </label>
-        <label class="opacity-50" for="city">
-          <input id="city" type="text" placeholder="Cidade" disabled />
-        </label>
-        <label class="opacity-50" for="state">
-          <input id="state" type="text" placeholder="Estado" disabled />
+        <label :class="{ 'opacity-50': !payload.state }" for="state">
+          <input
+            id="state"
+            v-model="payload.state"
+            type="text"
+            placeholder="Estado"
+            disabled
+          />
         </label>
       </div>
     </section>
@@ -168,8 +207,65 @@ export default defineComponent({
       email: '',
       phone: '',
       extra_phone: '',
-      cep: ''
+      cep: '',
+      avenue: '',
+      number: '',
+      complement: '',
+      neighbourhood: '',
+      city: '',
+      state: ''
     })
+
+    /**************************************
+     *  CEP webservice completion
+     **************************************/
+    const cep = ref<HTMLElement>(null)
+    const number = ref<HTMLElement>(null)
+    const cleanForm = () => {
+      payload.value.avenue = ''
+      payload.value.neighbourhood = ''
+      payload.value.city = ''
+      payload.value.state = ''
+    }
+
+    const fetchCep = () => {
+      // CEP copy only with digits
+      const cepCopy = payload.value.cep.replace(/\D/g, '')
+
+      if (cepCopy != '') {
+        const cepValidation = /^[0-9]{8}$/
+
+        if (cepValidation.test(cepCopy)) {
+          cep.value.value = cepCopy.substring(0, 5) + '-' + cepCopy.substring(5)
+
+          // Set inputs with "..." while fetching webservice
+          payload.value.avenue = '...'
+          payload.value.neighbourhood = '...'
+          payload.value.city = '...'
+          payload.value.state = '...'
+
+          fetch('https://viacep.com.br/ws/' + cepCopy + '/json')
+            .then((res) => res.json())
+            .then((res) => {
+              if (!('erro' in res)) {
+                payload.value.avenue = res.logradouro
+                payload.value.neighbourhood = res.bairro
+                payload.value.city = res.localidade
+                payload.value.state = res.uf
+                number.value.focus()
+              } else {
+                cleanForm()
+                alert('CEP não encontrado.')
+              }
+            })
+        } else {
+          cleanForm()
+          alert('Formato de CEP inválido.')
+        }
+      } else {
+        cleanForm()
+      }
+    }
 
     const onSubmit = () => {
       router.push('/clientes')
@@ -178,7 +274,7 @@ export default defineComponent({
         store.dispatch(ADD_CLIENT, payload.value)
       }, 250)
     }
-    return { onSubmit, isExtraPhone, payload }
+    return { onSubmit, isExtraPhone, payload, cep, number, fetchCep }
   }
 })
 </script>
