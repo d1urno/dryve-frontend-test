@@ -199,6 +199,9 @@ export default defineComponent({
     const router = useRouter()
     const isExtraPhone = ref(false)
 
+    /**************************************
+     *  Form submission feature
+     **************************************/
     const payload = ref<Client>({
       id: 0,
       name: '',
@@ -215,6 +218,14 @@ export default defineComponent({
       city: '',
       state: ''
     })
+
+    const onSubmit = () => {
+      router.push('/clientes')
+      // Add little delay to see list transitions
+      setTimeout(() => {
+        store.dispatch(ADD_CLIENT, payload.value)
+      }, 250)
+    }
 
     /**************************************
      *  CEP webservice completion
@@ -267,13 +278,6 @@ export default defineComponent({
       }
     }
 
-    const onSubmit = () => {
-      router.push('/clientes')
-      // Add little delay to see list transitions
-      setTimeout(() => {
-        store.dispatch(ADD_CLIENT, payload.value)
-      }, 250)
-    }
     return { onSubmit, isExtraPhone, payload, cep, number, fetchCep }
   }
 })
