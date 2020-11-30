@@ -50,7 +50,12 @@
       <table class="relative w-full overflow-hidden">
         <thead>
           <tr class="text-left">
-            <th class="w-16"><input type="checkbox" /></th>
+            <th class="w-16">
+              <input
+                type="checkbox"
+                class="border-2 border-black rounded-sm border-opacity-40"
+              />
+            </th>
             <th class="w-80">Nome</th>
             <th class="w-64">Status</th>
             <th class="w-72">Telefone</th>
@@ -61,7 +66,12 @@
         <!-- Table body -->
         <transition-group :name="transition" tag="tbody">
           <tr v-for="client in clients" :key="client.id">
-            <td class="border-b"><input type="checkbox" /></td>
+            <td class="border-b">
+              <input
+                type="checkbox"
+                class="border-2 border-black rounded-sm border-opacity-40"
+              />
+            </td>
             <td>{{ `${client.name} ${client.last_name}` }}</td>
             <td>
               <p
@@ -99,7 +109,7 @@
             id="items"
             :value="items"
             name="items"
-            class="w-12 p-0 ml-2 border-none text-sm focus:ring-0"
+            class="w-12 p-0 ml-2 text-sm border-none focus:ring-0"
             @change="handleSizeChange"
           >
             <option value="5">5</option>
