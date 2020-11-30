@@ -80,7 +80,7 @@
       <section
         class="col-span-2 pt-5 bg-white border border-black rounded border-opacity-10"
       >
-        <div class="flex justify-between px-6">
+        <div class="flex justify-between px-6 text-sm">
           <p>Últimas avaliações</p>
           <button type="button" class="flex pt-1 pl-2 -mt-1 -ml-2">
             <span>Hoje</span>
@@ -93,7 +93,7 @@
 
         <!-- Car list -->
         <div
-          class="flex px-6 py-5 text-xs tracking-widest text-black uppercase border-b text-opacity-50"
+          class="flex px-6 py-5 tracking-widest text-black text-opacity-50 uppercase border-b text-tiny"
         >
           <p class="flex-1">Dados do veículo</p>
           <div class="flex flex-1">
@@ -127,8 +127,10 @@
         <section
           class="flex-1 px-6 pt-5 mb-5 bg-white border border-black rounded border-opacity-10"
         >
-          <p class="mb-8 text-black text-opacity-80">Top intenções de compra</p>
-          <ul class="divide-y">
+          <p class="mb-8 text-sm text-black text-opacity-80">
+            Top intenções de compra
+          </p>
+          <ul class="text-sm divide-y">
             <li
               v-for="intention in intentions"
               :key="intention.id"
