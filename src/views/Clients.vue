@@ -35,7 +35,7 @@
       </div>
       <router-link
         to="/clientes/adicionar"
-        class="flex inline-flex items-center px-5 text-white bg-purple-700 rounded"
+        class="flex inline-flex items-center px-5 text-white transition bg-purple-700 rounded hover:bg-purple-600"
       >
         <icon type="add" class="w-3 h-3 text-white" />
         <span class="py-2 ml-2 text-sm">ADICIONAR</span>

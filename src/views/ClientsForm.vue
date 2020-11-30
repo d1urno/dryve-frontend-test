@@ -179,7 +179,10 @@
     <footer
       class="flex p-5 space-x-4 border-b border-l border-r border-black rounded-b bg-blue-50 border-opacity-10"
     >
-      <button class="px-12 py-2 text-white bg-purple-700 rounded" type="submit">
+      <button
+        class="px-12 py-2 text-white transition bg-purple-700 rounded hover:bg-purple-600"
+        type="submit"
+      >
         SALVAR
       </button>
       <button
