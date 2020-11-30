@@ -8,14 +8,14 @@
         class="rounded ring-1 ring-black ring-opacity-20 c-img-dimensions"
       />
       <figcaption class="ml-3">
-        <p class="text-xs font-bold leading-tight text-blue-900">
+        <p class="text-xs font-bold leading-tight text-blue-900 uppercase">
           {{ `${car.brand_name} ${car.model_name}` }}
         </p>
-        <p class="text-gray-400 text-tiny">{{ car.version_name }}</p>
-        <p class="text-gray-400 text-tiny">
+        <p class="text-gray-400 uppercase text-tiny">{{ car.version_name }}</p>
+        <p class="text-gray-400 uppercase text-tiny">
           {{ `${car.model_year} - ${car.fuel_type}` }}
         </p>
-        <p class="text-gray-400 text-tiny">
+        <p class="text-gray-400 uppercase text-tiny">
           {{ `${car.transmission_type} - ${formatNumber(car.mileage)} KM` }}
         </p>
       </figcaption>
