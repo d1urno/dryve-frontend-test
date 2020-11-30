@@ -93,7 +93,7 @@
 
         <!-- Car list -->
         <div
-          class="flex px-6 py-5 text-xs tracking-widest text-black uppercase border-b opacity-50 text-opacity-80"
+          class="flex px-6 py-5 text-xs tracking-widest text-black uppercase border-b text-opacity-50"
         >
           <p class="flex-1">Dados do veículo</p>
           <div class="flex flex-1">
