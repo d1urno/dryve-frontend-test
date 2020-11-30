@@ -19,7 +19,7 @@
         <div class="flex items-center -ml-1">
           <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
           <div class="flex items-baseline">
-            <p class="text-sm text-purple-500">36%</p>
+            <p class="text-sm text-purple-700">36%</p>
             <p class="ml-2 text-xs text-black text-opacity-50">desde ontem</p>
           </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="flex items-center -ml-1">
           <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
           <div class="flex items-baseline">
-            <p class="text-sm text-purple-500">4%</p>
+            <p class="text-sm text-purple-700">4%</p>
             <p class="ml-2 text-xs text-black text-opacity-50">este mês</p>
           </div>
         </div>
@@ -173,21 +173,21 @@
                     class="inline-block w-2 h-2 mb-px bg-blue-500 rounded-full"
                   />
                   <span>Na média</span
-                  ><span class="text-xs text-gray-400">60%</span>
+                  ><span class="text-xs text-gray-300">60%</span>
                 </span>
                 <span class="block space-x-2 text-black text-opacity-80">
                   <span
                     class="inline-block w-2 h-2 mb-px bg-red-500 rounded-full"
                   />
                   <span>Acima da média</span
-                  ><span class="text-xs text-gray-400">60%</span>
+                  ><span class="text-xs text-gray-300">60%</span>
                 </span>
                 <span class="block space-x-2 text-black text-opacity-80">
                   <span
                     class="inline-block w-2 h-2 mb-px bg-yellow-500 rounded-full"
                   />
                   <span>Abaixo da média</span
-                  ><span class="text-xs text-gray-400">60%</span>
+                  ><span class="text-xs text-gray-300">60%</span>
                 </span>
               </div>
             </div>

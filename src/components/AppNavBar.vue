@@ -13,7 +13,7 @@
       <router-link to="/" class="pt-1 pl-1 pr-2 -ml-1 -mr-2">
         <icon
           type="notifications"
-          class="w-6 h-6 text-blue-500 text-opacity-30"
+          class="w-6 h-6 text-blue-600 text-opacity-30"
         />
       </router-link>
     </div>

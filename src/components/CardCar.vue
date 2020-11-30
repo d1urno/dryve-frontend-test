@@ -8,7 +8,7 @@
         class="rounded ring-1 ring-black ring-opacity-20 c-img-dimensions"
       />
       <figcaption class="ml-3">
-        <p class="text-xs font-bold leading-tight text-black">
+        <p class="text-xs font-bold leading-tight text-blue-900">
           {{ `${car.brand_name} ${car.model_name}` }}
         </p>
         <p class="text-gray-400 text-tiny">{{ car.version_name }}</p>
@@ -28,7 +28,7 @@
         class="flex items-baseline justify-center flex-1 py-3 mt-3 md:my-auto md:block md:py-0"
       >
         <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">ANÚNCIO</p>
-        <p class="text-xs font-bold md:mb-1">
+        <p class="text-xs font-bold text-blue-900 md:mb-1">
           R$ {{ formatPrice(car.ad_selling_price) }}
         </p>
         <span class="ml-2 leading-none text-gray-400 text-tiny md:hidden"
@@ -37,7 +37,7 @@
         <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
           MÍNIMO ACEITO
         </p>
-        <p class="text-xs text-gray-400">
+        <p class="text-xs text-gray-300">
           R$ {{ formatPrice(car.ad_selling_price * 0.97) }}
         </p>
       </div>
@@ -47,7 +47,7 @@
         >
           Aguardando precificação
         </p>
-        <time class="text-xs text-gray-400">18/04/2020 às 14:35</time>
+        <time class="text-xs text-gray-300">18/04/2020 às 14:35</time>
       </div>
     </div>
     <!-- End: Announce data -->

@@ -19,13 +19,19 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
-      red: colors.red,
+      gray: {
+        ...colors.coolGray,
+        100: '#f3f4f6',
+        200: '#e0e0e0',
+        300: '#a5abb7',
+        400: '#768095'
+      },
+      red: { ...colors.red, 500: '#fc4a40' },
       yellow: colors.amber,
       green: colors.emerald,
-      blue: colors.blue,
+      blue: { ...colors.blue, 50: '#f3f7ff', 600: '#0065ff', 900: '#1e2c4c' },
       indigo: colors.indigo,
-      purple: colors.violet,
+      purple: { ...colors.violet, 700: '#6200ee' },
       pink: colors.pink
     },
     spacing: {
