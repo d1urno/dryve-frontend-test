@@ -25,7 +25,7 @@
     </figure>
 
     <!-- Navigation -->
-    <ul class="w-56 mx-3 space-y-1 pl-px">
+    <ul class="w-56 pl-px mx-3 space-y-1">
       <app-side-bar-link
         :is-open="isOpen"
         label="Início"
