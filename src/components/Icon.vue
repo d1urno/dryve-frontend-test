@@ -25,6 +25,18 @@ export default defineComponent({
     search: defineAsyncComponent(() => import('../assets/icons/search.vue')),
     notifications: defineAsyncComponent(
       () => import('../assets/icons/notifications.vue')
+    ),
+    help: defineAsyncComponent(() => import('../assets/icons/help.vue')),
+    money: defineAsyncComponent(() => import('../assets/icons/money.vue')),
+    devices: defineAsyncComponent(() => import('../assets/icons/devices.vue')),
+    'arrow-down': defineAsyncComponent(
+      () => import('../assets/icons/arrow-down.vue')
+    ),
+    'arrow-up': defineAsyncComponent(
+      () => import('../assets/icons/arrow-up.vue')
+    ),
+    'arrow-right': defineAsyncComponent(
+      () => import('../assets/icons/arrow-right.vue')
     )
   },
   props: {

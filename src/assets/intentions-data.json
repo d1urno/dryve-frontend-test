@@ -1,0 +1,37 @@
+[
+  {
+    "id": 5,
+    "name": "HB20",
+    "quantity": 197,
+    "image": "src/assets/img/honda.jpg",
+    "hq": "src/assets/img/honda@2x.jpg 2x, src/assets/img/honda@3x.jpg 3x"
+  },
+  {
+    "id": 4,
+    "name": "Onix",
+    "quantity": 183,
+    "image": "src/assets/img/chevrolet.jpg",
+    "hq": "src/assets/img/chevrolet@2x.jpg 2x, src/assets/img/chevrolet@3x.jpg 3x"
+  },
+  {
+    "id": 3,
+    "name": "Renegade",
+    "quantity": 125,
+    "image": "src/assets/img/jeep.jpg",
+    "hq": "src/assets/img/jeep@2x.jpg 2x, src/assets/img/jeep@3x.jpg 3x"
+  },
+  {
+    "id": 2,
+    "name": "T-Cross",
+    "quantity": 109,
+    "image": "src/assets/img/vw.jpg",
+    "hq": "src/assets/img/vw@2x.jpg 2x, src/assets/img/vw@3x.jpg 3x"
+  },
+  {
+    "id": 1,
+    "name": "Kicks",
+    "quantity": 86,
+    "image": "src/assets/img/nissan.jpg",
+    "hq": "src/assets/img/nissan@2x.jpg 2x, src/assets/img/nissan@3x.jpg 3x"
+  }
+]

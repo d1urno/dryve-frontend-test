@@ -1,7 +1,8 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
-import { Car, Client } from '../types'
+import { Car, Client, Intention } from '../types'
 import ClientsData from '../assets/clients-data.json'
+import IntentionsData from '../assets/intentions-data.json'
 import {
   RequestStatus,
   ADD_CLIENT,
@@ -13,7 +14,7 @@ import {
   DELETE_CLIENT,
   EDIT_CLIENT,
   FETCH_CARS,
-  STATUS
+  STATUS, INTENTIONS
 } from './store-constants'
 
 // define your typings for the store state
@@ -21,6 +22,7 @@ export interface State {
   status: RequestStatus
   cars: Car[]
   clients: Client[]
+  intentions: Intention[]
 }
 
 // define injection key
@@ -30,7 +32,8 @@ export const store = createStore<State>({
   state: {
     status: RequestStatus.SUCCESS,
     cars: [],
-    clients: [...ClientsData]
+    clients: [...ClientsData],
+    intentions: [...IntentionsData]
   },
 
   mutations: {
@@ -95,10 +98,12 @@ export const store = createStore<State>({
 
   getters: {
     [STATUS]: (state) => state.status,
-    [CARS]: (state) => (size = 5, page = 1) =>
+    [CARS]: (state) => (size = 10, page = 1) =>
       state.cars.slice((page - 1) * size, page * size),
     [CLIENTS]: (state) => (size = 10, page = 1) =>
-      state.clients.slice((page - 1) * size, page * size)
+      state.clients.slice((page - 1) * size, page * size),
+    [INTENTIONS]: (state) => (size = 10, page = 1) =>
+      state.intentions.slice((page - 1) * size, page * size)
   }
 })
 

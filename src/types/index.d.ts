@@ -30,3 +30,11 @@ export interface Client {
   email: string
   phone: string
 }
+
+export interface Intention {
+  id: number
+  name: string
+  quantity: number
+  image: string
+  hq: string
+}
