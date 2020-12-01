@@ -13,7 +13,7 @@
           <span
             class="flex items-center justify-center rounded-full bg-blue-50 c-icon-dimensions"
           >
-            <icon type="car" class="w-10 h-10 text-blue-600" />
+            <icon type="car" class="w-8 h-8 text-blue-600" />
           </span>
         </div>
         <div class="flex items-center -ml-1">
@@ -38,7 +38,7 @@
           <span
             class="flex items-center justify-center rounded-full bg-blue-50 c-icon-dimensions"
           >
-            <icon type="devices" class="w-10 h-10 text-blue-600" />
+            <icon type="devices" class="w-8 h-8 text-blue-600" />
           </span>
         </div>
         <div class="flex items-center -ml-1">
@@ -63,7 +63,7 @@
           <span
             class="flex items-center justify-center rounded-full bg-blue-50 c-icon-dimensions"
           >
-            <icon type="money" class="w-10 h-10 text-blue-600" />
+            <icon type="money" class="w-8 h-8 text-blue-600" />
           </span>
         </div>
         <div class="flex items-center -ml-1">
