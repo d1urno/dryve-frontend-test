@@ -27,8 +27,10 @@
 
     <!-- Inputs -->
     <section class="bg-white border border-black rounded-t border-opacity-10">
-      <div class="grid w-full max-w-2xl grid-cols-2 gap-4 p-10">
-        <div class="flex col-span-2 space-x-4">
+      <div class="grid w-full grid-cols-2 gap-4 p-10 md:max-w-2xl">
+        <div
+          class="flex flex-col col-span-2 space-y-4 sm:space-x-4 sm:space-y-0 sm:flex-row"
+        >
           <label class="flex-1" for="name">
             <input
               id="name"
@@ -57,8 +59,10 @@
             required
           />
         </label>
-        <div class="flex col-span-2 space-x-4">
-          <label class="flex-1" for="phone">
+        <div
+          class="flex flex-col items-center col-span-2 space-y-4 sm:space-x-4 sm:space-y-0 sm:flex-row"
+        >
+          <label class="flex-1 w-full" for="phone">
             <input
               id="phone"
               v-model="payload.phone"
@@ -80,7 +84,7 @@
               + adicionar outro
             </button>
           </div>
-          <label v-else for="extra_phone" class="flex-1">
+          <label v-else for="extra_phone" class="flex-1 w-full">
             <input
               id="extra_phone"
               v-model="payload.extra_phone"
@@ -94,7 +98,7 @@
             />
           </label>
         </div>
-        <label for="cep">
+        <label for="cep" class="col-span-2 sm:col-span-1">
           <input
             id="cep"
             ref="cep"
@@ -153,7 +157,11 @@
             disabled
           />
         </label>
-        <label :class="{ 'opacity-50': !payload.city }" for="city">
+        <label
+          :class="{ 'opacity-50': !payload.city }"
+          for="city"
+          class="col-span-2 sm:col-span-1"
+        >
           <input
             id="city"
             v-model="payload.city"
@@ -162,7 +170,11 @@
             disabled
           />
         </label>
-        <label :class="{ 'opacity-50': !payload.state }" for="state">
+        <label
+          :class="{ 'opacity-50': !payload.state }"
+          for="state"
+          class="col-span-2 sm:col-span-1"
+        >
           <input
             id="state"
             v-model="payload.state"
@@ -177,16 +189,16 @@
 
     <!-- Footer -->
     <footer
-      class="flex p-5 space-x-4 border-b border-l border-r border-black rounded-b bg-blue-50 border-opacity-10"
+      class="p-5 border-b border-l border-r border-black rounded-b sm:flex sm:space-x-4 bg-blue-50 border-opacity-10"
     >
       <button
-        class="px-12 py-2 text-white transition bg-purple-700 rounded hover:bg-purple-600"
+        class="block px-12 py-2 mx-auto text-white transition bg-purple-700 rounded hover:bg-purple-600 sm:mx-0"
         type="submit"
       >
         SALVAR
       </button>
       <button
-        class="px-12 py-2 text-white text-purple-700 rounded"
+        class="block px-12 py-2 mx-auto text-white text-purple-700 rounded sm:mx-0"
         type="button"
         @click="$router.push('/clientes')"
       >
