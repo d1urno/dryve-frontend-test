@@ -77,47 +77,54 @@
       <!-- End: Top Card 3 -->
 
       <!-- Cars card -->
-      <section
-        class="col-span-2 pt-5 bg-white border border-black rounded border-opacity-10"
-      >
-        <div class="flex justify-between px-6 text-sm">
-          <p>Últimas avaliações</p>
-          <button type="button" class="flex pt-1 pl-2 -mt-1 -ml-2">
-            <span>Hoje</span>
-            <icon
-              type="arrow-down"
-              class="w-6 h-6 text-black text-opacity-50"
-            />
-          </button>
-        </div>
-
-        <!-- Car list -->
-        <div
-          class="flex px-6 py-5 tracking-widest text-black text-opacity-50 uppercase border-b text-tiny"
+      <transition name="scale" mode="out-in">
+        <app-loading
+          v-if="status === RequestStatus.LOADING"
+          class="col-span-2"
+        />
+        <section
+          v-else
+          class="col-span-2 pt-5 bg-white border border-black rounded border-opacity-10"
         >
-          <p class="w-7/12">Dados do veículo</p>
-          <div class="flex w-6/12">
-            <p class="w-6/12">Valor</p>
-            <p class="w-6/12">Status</p>
+          <div class="flex justify-between px-6 text-sm">
+            <p>Últimas avaliações</p>
+            <button type="button" class="flex pt-1 pl-2 -mt-1 -ml-2">
+              <span>Hoje</span>
+              <icon
+                type="arrow-down"
+                class="w-6 h-6 text-black text-opacity-50"
+              />
+            </button>
           </div>
-        </div>
-        <div class="overflow-y-auto divide-y c-list-max-height c-custom-bar">
-          <card-car
-            v-for="car in cars"
-            :key="car.vehicle_uuid"
-            :car="car"
-            class="px-6"
-          />
-        </div>
-        <button
-          type="button"
-          class="flex items-center px-6 py-2 ml-auto text-sm text-blue-600"
-        >
-          <span>Ver tudo</span>
-          <icon type="arrow-right" class="w-6 h-6" />
-        </button>
-        <!-- End: Car list -->
-      </section>
+
+          <!-- Car list -->
+          <div
+            class="flex px-6 py-5 tracking-widest text-black text-opacity-50 uppercase border-b text-tiny"
+          >
+            <p class="w-7/12">Dados do veículo</p>
+            <div class="flex w-6/12">
+              <p class="w-6/12">Valor</p>
+              <p class="w-6/12">Status</p>
+            </div>
+          </div>
+          <div class="overflow-y-auto divide-y c-list-max-height c-custom-bar">
+            <card-car
+              v-for="car in cars"
+              :key="car.vehicle_uuid"
+              :car="car"
+              class="px-6"
+            />
+          </div>
+          <button
+            type="button"
+            class="flex items-center px-6 py-2 ml-auto text-sm text-blue-600"
+          >
+            <span>Ver tudo</span>
+            <icon type="arrow-right" class="w-6 h-6" />
+          </button>
+          <!-- End: Car list -->
+        </section>
+      </transition>
       <!-- End: Cars card -->
 
       <div
@@ -206,21 +213,29 @@
 import { defineComponent, computed } from 'vue'
 import Icon from '../components/Icon.vue'
 import CardCar from '../components/CardCar.vue'
+import AppLoading from '../components/AppLoading.vue'
 import { useStore } from '../store'
-import { CARS, FETCH_CARS, INTENTIONS } from '../store/store-constants'
+import {
+  CARS,
+  FETCH_CARS,
+  INTENTIONS,
+  RequestStatus,
+  STATUS
+} from '../store/store-constants'
 import { Car, Intention } from '../types'
 import PieChart from '../components/PieChart.vue'
 
 export default defineComponent({
-  components: { PieChart, CardCar, Icon },
+  components: { PieChart, CardCar, Icon, AppLoading },
   setup() {
     const store = useStore()
+    const status = computed<RequestStatus>(() => store.getters[STATUS])
     const cars = computed<Car[]>(() => store.getters[CARS]())
     if (cars.value.length === 0) store.dispatch(FETCH_CARS)
 
     const intentions = computed<Intention[]>(() => store.getters[INTENTIONS]())
 
-    return { cars, intentions }
+    return { cars, intentions, status, RequestStatus }
   }
 })
 </script>

@@ -70,24 +70,6 @@ export default defineComponent({
   max-height: calc(100vh - theme('spacing.16'));
   height: calc(100vh - theme('spacing.16'));
 }
-.scale-enter-from {
-  @apply transform scale-105 opacity-0;
-}
-.scale-leave-to {
-  @apply transform scale-105 opacity-0;
-}
-.scale-leave-active,
-.scale-enter-active {
-  @apply transition duration-300 origin-top;
-}
-.fade-enter-from,
-.fade-leave-to {
-  @apply opacity-0;
-}
-.fade-leave-active,
-.fade-enter-active {
-  @apply transition duration-300 ease-out;
-}
 </style>
 
 <style>
@@ -107,5 +89,23 @@ export default defineComponent({
     -ms-user-select: none;
     user-select: none;
   }
+}
+.scale-enter-from {
+  @apply transform scale-105 opacity-0;
+}
+.scale-leave-to {
+  @apply transform scale-105 opacity-0;
+}
+.scale-leave-active,
+.scale-enter-active {
+  @apply transition duration-300 origin-top;
+}
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+.fade-leave-active,
+.fade-enter-active {
+  @apply transition duration-300 ease-out;
 }
 </style>
