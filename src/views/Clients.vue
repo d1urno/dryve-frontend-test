@@ -8,7 +8,7 @@
           type="button"
           class="flex items-center h-full px-3 space-x-2 bg-white border border-black rounded border-opacity-10"
         >
-          <icon type="filter" class="w-5 h-5 text-blue-600" />
+          <icon type="ic-filter" class="w-5 h-5 text-blue-600" />
           <span class="py-2 text-sm text-purple-700 sm:py-0">FILTRAR</span>
         </button>
         <!-- End:Filter -->

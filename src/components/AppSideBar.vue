@@ -5,7 +5,7 @@
       <img
         class="box-content object-cover w-12 h-12 ml-3
         border-2 border-white rounded-full ring-2 ring-blue-600"
-        src="/src/assets/img/Steven.jpg"
+        src="/img/Steven.jpg"
         alt=""
       />
       <figcaption :class="{ hidden: !isOpen }" class="pl-1">
