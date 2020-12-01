@@ -45,7 +45,9 @@ export default defineComponent({
       () => import('../assets/icons/chevron-right.vue')
     ),
     more: defineAsyncComponent(() => import('../assets/icons/more.vue')),
-    filter: defineAsyncComponent(() => import('../assets/icons/filter.vue')),
+    'ic-filter': defineAsyncComponent(
+      () => import('../assets/icons/filter.vue')
+    ),
     add: defineAsyncComponent(() => import('../assets/icons/add.vue'))
   },
   props: {
