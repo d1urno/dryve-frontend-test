@@ -1,0 +1,86 @@
+[
+  {
+    "id": 12,
+    "name": "Paulo Henrique Mattos",
+    "status": "Cliente",
+    "email": "ph.mattos@gmail.com",
+    "phone": "(16) 99653-8899"
+  },
+  {
+    "id": 11,
+    "name": "Juliana Martins Silva",
+    "status": "Lead",
+    "email": "jumartins.silva@hotmail.com",
+    "phone": "(16) 99819-3112"
+  },
+  {
+    "id": 10,
+    "name": "Luís Rocha",
+    "status": "Cliente",
+    "email": "luisrocha@yahoo.com.br",
+    "phone": "(16) 99776-9290"
+  },
+  {
+    "id": 9,
+    "name": "Adilson Vieira Antunes",
+    "status": "Cliente",
+    "email": "a.vieira@uol.com.br",
+    "phone": "(16) 99664-0187"
+  },
+  {
+    "id": 8,
+    "name": "Felipe Alves",
+    "status": "Cliente",
+    "email": "felipe_alves@hotmail.com",
+    "phone": "(16) 99660-7765"
+  },
+  {
+    "id": 7,
+    "name": "Roberta Vianna",
+    "status": "Cliente",
+    "email": "robertavianna@gmail.com",
+    "phone": "(16) 99765-2233"
+  },
+  {
+    "id": 6,
+    "name": "Silvia Pereira",
+    "status": "Cliente",
+    "email": "silvia.pereira@outlook.com",
+    "phone": "(16) 99642-8721"
+  },
+  {
+    "id": 5,
+    "name": "Eduardo Oliveira",
+    "status": "Lead",
+    "email": "eduoliveira@hotmail.com",
+    "phone": "(16) 99872-3254"
+  },
+  {
+    "id": 4,
+    "name": "Maria Antônia Silva Santos",
+    "status": "Cliente",
+    "email": "maria.ss@uol.com.br",
+    "phone": "(16) 99443-9986"
+  },
+  {
+    "id": 3,
+    "name": "Rodrigo Ribeiro Costa",
+    "status": "Cliente",
+    "email": "rrc@gmail.com",
+    "phone": "(16) 99876-0012"
+  },
+  {
+    "id": 2,
+    "name": "Georgia Young",
+    "status": "Cliente",
+    "email": "georgia.young@example.com",
+    "phone": "(16) 55530-6011"
+  },
+  {
+    "id": 1,
+    "name": "Pedro Salina",
+    "status": "Cliente",
+    "email": "pedrosal@example.com",
+    "phone": "(16) 56531-5618"
+  }
+]
