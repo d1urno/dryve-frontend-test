@@ -247,7 +247,7 @@ export default defineComponent({
       // Add little delay to see list transitions
       setTimeout(() => {
         store.dispatch(ADD_CLIENT, payload.value)
-      }, 250)
+      }, 550)
     }
 
     /**************************************
