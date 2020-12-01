@@ -14,7 +14,8 @@ import {
   DELETE_CLIENT,
   EDIT_CLIENT,
   FETCH_CARS,
-  STATUS, INTENTIONS
+  STATUS,
+  INTENTIONS
 } from './store-constants'
 
 // define your typings for the store state
@@ -100,10 +101,31 @@ export const store = createStore<State>({
     [STATUS]: (state) => state.status,
     [CARS]: (state) => (size = 10, page = 1) =>
       state.cars.slice((page - 1) * size, page * size),
-    [CLIENTS]: (state) => (size = 10, page = 1) =>
-      state.clients.slice((page - 1) * size, page * size),
-    [INTENTIONS]: (state) => (size = 10, page = 1) =>
-      state.intentions.slice((page - 1) * size, page * size)
+    [CLIENTS]: (state) => (query = '', size = 10, page = 0) => {
+      const filteredClients = state.clients.reduce(
+        (prev, val) =>
+          val.name
+            .normalize('NFD')
+            .replace(/[\u0300-\u036F]/g, '')
+            .toLowerCase()
+            .includes(
+              query
+                .normalize('NFD')
+                .replace(/[\u0300-\u036F]/g, '')
+                .toLowerCase()
+            )
+            ? [...prev, val]
+            : prev,
+        [] as Client[]
+      )
+      return page
+        ? filteredClients.slice((page - 1) * size, page * size)
+        : filteredClients
+    },
+    [INTENTIONS]: (state) => (size = 10, page = 0) =>
+      page
+        ? state.intentions.slice((page - 1) * size, page * size)
+        : state.intentions
   }
 })
 

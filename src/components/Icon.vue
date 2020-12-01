@@ -37,7 +37,16 @@ export default defineComponent({
     ),
     'arrow-right': defineAsyncComponent(
       () => import('../assets/icons/arrow-right.vue')
-    )
+    ),
+    'chevron-left': defineAsyncComponent(
+      () => import('../assets/icons/chevron-left.vue')
+    ),
+    'chevron-right': defineAsyncComponent(
+      () => import('../assets/icons/chevron-right.vue')
+    ),
+    more: defineAsyncComponent(() => import('../assets/icons/more.vue')),
+    filter: defineAsyncComponent(() => import('../assets/icons/filter.vue')),
+    add: defineAsyncComponent(() => import('../assets/icons/add.vue'))
   },
   props: {
     type: {
