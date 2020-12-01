@@ -1,7 +1,7 @@
 <template>
   <div class="py-5 md:flex">
     <!-- Car data -->
-    <figure class="flex w-7/12 my-auto">
+    <figure class="flex my-auto md:w-7/12">
       <img
         :src="car.image"
         :alt="`${car.brand_name} ${car.model_name}`"
@@ -23,23 +23,26 @@
     <!-- End: Car data -->
 
     <!-- Announce data -->
-    <div class="w-6/12 md:flex">
+    <div class="md:w-6/12 md:flex">
       <div
-        class="flex items-baseline justify-center flex-1 py-3 mt-3 md:my-auto md:block md:py-0"
+        class="flex items-baseline justify-center flex-1 py-3 mt-3 space-x-8 md:space-x-0 md:my-auto md:block md:py-0"
       >
-        <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">ANÚNCIO</p>
-        <p class="text-xs font-bold text-blue-900 md:mb-1">
-          R$ {{ formatPrice(car.ad_selling_price) }}
-        </p>
-        <span class="ml-2 leading-none text-gray-400 text-tiny md:hidden"
-          >-</span
-        >
-        <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
-          MÍNIMO ACEITO
-        </p>
-        <p class="text-xs text-gray-300">
-          R$ {{ formatPrice(car.ad_selling_price * 0.97) }}
-        </p>
+        <div class="text-center md:text-left">
+          <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
+            ANÚNCIO
+          </p>
+          <p class="text-xs font-bold text-blue-900 md:mb-1">
+            R$ {{ formatPrice(car.ad_selling_price) }}
+          </p>
+        </div>
+        <div class="text-center md:text-left">
+          <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
+            MÍNIMO ACEITO
+          </p>
+          <p class="text-xs text-gray-300">
+            R$ {{ formatPrice(car.ad_selling_price * 0.97) }}
+          </p>
+        </div>
       </div>
       <div class="flex-1 my-auto text-center">
         <p
