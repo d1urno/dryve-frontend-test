@@ -8,7 +8,7 @@
       hover:bg-blue-50 opacity-20"
       :class="{
         'hover:text-blue-600 hover:text-opacity-100 opacity-100 group': !disabled,
-        'pointer-events-none': disabled,
+        'pointer-events-none': disabled || $route.path === to,
         'text-blue-600 text-opacity-100': $route.path === to
       }"
     >
