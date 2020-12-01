@@ -6,14 +6,14 @@
     md:top-0 md:transform-none md:w-20 md:shadow-none"
     :class="{ 'md:w-64': isOpen, '-translate-x-full': !isOpen }"
     :is-open="isOpen"
-    @mouseover="isOpen = true"
-    @mouseout="isOpen = false"
-    @toggle="isOpen = false"
+    @mouseover="showMenu(true)"
+    @mouseleave="showMenu(false)"
+    @navigation="showMenu(false, true)"
   />
   <app-nav-bar
     class="absolute inset-0 z-20 h-16 md:ml-20"
     :is-open="isOpen"
-    @toggle="isOpen = !isOpen"
+    @toggle="showMenu(!isOpen)"
   />
   <!-- Mobile backdrop -->
   <transition name="fade">
@@ -22,7 +22,7 @@
       type="button"
       class="fixed inset-0 z-10 w-full bg-black cursor-default md:hidden opacity-20 focus:outline-none"
       tabindex="-1"
-      @mousedown="isOpen = false"
+      @mousedown="showMenu(false)"
     />
   </transition>
   <!-- End: Mobile backdrop -->
@@ -47,7 +47,21 @@ import AppFooter from './components/AppFooter.vue'
 export default defineComponent({
   name: 'App',
   components: { AppSideBar, AppNavBar, AppFooter },
-  setup: () => ({ isOpen: ref(false) })
+  setup() {
+    // Menu handling
+    const isOpen = ref(false)
+    const waiting = ref(false)
+    const showMenu = (val: boolean, pause = false) => {
+      if (waiting.value) return
+      isOpen.value = val
+      if (!pause) return
+      waiting.value = true
+      setTimeout(() => {
+        waiting.value = false
+      }, 200)
+    }
+    return { isOpen, showMenu }
+  }
 })
 </script>
 
