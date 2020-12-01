@@ -1,5 +1,5 @@
 <template>
-  <main class="p-6 bg-gray-100">
+  <main ref="root" class="p-6 bg-gray-100">
     <!-- Actions -->
     <div class="justify-between w-full mb-6 sm:flex">
       <div class="flex items-center w-full mb-5 sm:mb-0">
@@ -39,7 +39,7 @@
       >
         <icon type="add" class="w-3 h-3 text-white" />
         <span class="py-2 ml-2">ADICIONAR</span>
-      </button>
+      </router-link>
     </div>
     <!-- End: Actions -->
 
@@ -62,7 +62,7 @@
         <transition-group :name="transition" tag="tbody">
           <tr v-for="client in clients" :key="client.id">
             <td class="border-b"><input type="checkbox" /></td>
-            <td>{{ client.name }}</td>
+            <td>{{ `${client.name} ${client.last_name}` }}</td>
             <td>
               <p
                 class="w-24 py-2 -my-2 text-xs text-center text-gray-500 bg-gray-100 rounded-full"
@@ -127,7 +127,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, watch } from 'vue'
+import { defineComponent, computed, ref, watch, onMounted } from 'vue'
 import Icon from '../components/Icon.vue'
 import { useStore } from '../store'
 import { CLIENTS } from '../store/store-constants'
@@ -164,7 +164,7 @@ export default defineComponent({
     /**********************************
      *  Transitioned navigation feature
      *********************************/
-    const transition = ref('')
+    const transition = ref('zoom-fade')
     watch(query, () => (transition.value = 'zoom-fade'))
 
     const handleNext = () => {
@@ -184,7 +184,14 @@ export default defineComponent({
       items.value = e.target.value
     }
 
+    // Scroll top after client added
+    const root = ref<HTMLElement>(null)
+    onMounted(() => {
+      root.value.scrollIntoView()
+    })
+
     return {
+      root,
       clients,
       items,
       navigationText,
