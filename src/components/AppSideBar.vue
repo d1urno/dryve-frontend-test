@@ -81,9 +81,6 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['navigation'],
-  setup() {
-    return {}
-  }
+  emits: ['navigation']
 })
 </script>
