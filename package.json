@@ -1,5 +1,5 @@
 {
-  "name": "dryver-frontend-test",
+  "name": "dryve-frontend-test",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
