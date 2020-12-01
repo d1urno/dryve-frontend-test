@@ -17,6 +17,7 @@ import {
   STATUS,
   INTENTIONS
 } from './store-constants'
+import { useIncludesText } from '../compositions/text-match'
 
 // define your typings for the store state
 export interface State {
@@ -104,16 +105,8 @@ export const store = createStore<State>({
     [CLIENTS]: (state) => (query = '', size = 10, page = 0) => {
       const filteredClients = state.clients.reduce(
         (prev, val) =>
-          val.name
-            .normalize('NFD')
-            .replace(/[\u0300-\u036F]/g, '')
-            .toLowerCase()
-            .includes(
-              query
-                .normalize('NFD')
-                .replace(/[\u0300-\u036F]/g, '')
-                .toLowerCase()
-            )
+          useIncludesText(val.name, query) ||
+          useIncludesText(val.last_name, query)
             ? [...prev, val]
             : prev,
         [] as Client[]
