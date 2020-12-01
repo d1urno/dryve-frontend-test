@@ -11,6 +11,7 @@
         'pointer-events-none': disabled || $route.path === to,
         'text-blue-600 text-opacity-100': $route.path === to
       }"
+      @click.capture="$emit('toggle')"
     >
       <icon
         :type="icon"
@@ -54,6 +55,7 @@ export default defineComponent({
       type: Boolean,
       default: false
     }
-  }
+  },
+emits: ['toggle']
 })
 </script>
