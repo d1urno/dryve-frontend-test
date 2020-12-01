@@ -47,4 +47,22 @@ export default defineComponent({
 .scale-enter-active {
   @apply transition duration-300 origin-top;
 }
+<style>
+/*****************************************
+   Remove highlight blue color on buttons
+   when tapped, only for mobile devices
+  *****************************************/
+@layer base {
+  a,
+  button,
+  label {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
 </style>
