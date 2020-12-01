@@ -2,7 +2,7 @@
   <i
     class="inline-flex items-center justify-center"
     role="presentation"
-    :aria-labelledby="type"
+    :aria-label="type"
   >
     <component :is="type" v-bind="$attrs" />
   </i>
