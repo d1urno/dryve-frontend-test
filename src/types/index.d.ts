@@ -24,6 +24,7 @@ export interface Car {
 }
 
 export interface Client {
+  [key: string]: string | number
   id: number
   name: string
   last_name: string

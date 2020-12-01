@@ -189,16 +189,14 @@ export default defineComponent({
       page.value--
     }
 
-    const handleSizeChange = (e: Event) => {
+    const handleSizeChange = (e: Event & { target: HTMLSelectElement }) => {
       transition.value = 'zoom-fade'
-      items.value = e.target.value
+      items.value = parseInt(e.target.value)
     }
 
     // Scroll top after client added
-    const root = ref<HTMLElement>(null)
-    onMounted(() => {
-      root.value.scrollIntoView()
-    })
+    const root = ref<HTMLElement | null>(null)
+    onMounted(() => root.value?.scrollIntoView())
 
     return {
       root,

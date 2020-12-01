@@ -253,8 +253,8 @@ export default defineComponent({
     /**************************************
      *  CEP webservice completion
      **************************************/
-    const cep = ref<HTMLElement>(null)
-    const number = ref<HTMLElement>(null)
+    const cep = ref<HTMLInputElement | null>(null)
+    const number = ref<HTMLInputElement | null>(null)
     const cleanForm = () => {
       payload.value.avenue = ''
       payload.value.neighbourhood = ''
@@ -269,7 +269,7 @@ export default defineComponent({
       if (cepCopy != '') {
         const cepValidation = /^[0-9]{8}$/
 
-        if (cepValidation.test(cepCopy)) {
+        if (cepValidation.test(cepCopy) && cep.value) {
           cep.value.value = cepCopy.substring(0, 5) + '-' + cepCopy.substring(5)
 
           // Set inputs with "..." while fetching webservice
@@ -286,7 +286,7 @@ export default defineComponent({
                 payload.value.neighbourhood = res.bairro
                 payload.value.city = res.localidade
                 payload.value.state = res.uf
-                number.value.focus()
+                number.value?.focus()
               } else {
                 cleanForm()
                 alert('CEP não encontrado.')
@@ -304,7 +304,7 @@ export default defineComponent({
     /**************************************
      *  Phone mask feature
      **************************************/
-    const debouncedPhoneMask = (field: string) => {
+    const debouncedPhoneMask = (field: 'phone' | 'extra_phone') => {
       setTimeout(() => {
         const v = maskPhone(payload.value[field])
         if (v != payload.value[field]) {

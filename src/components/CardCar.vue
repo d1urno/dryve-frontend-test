@@ -70,15 +70,14 @@ export default defineComponent({
     }
   },
   setup() {
-    const formatPrice = (price) =>
+    const formatPrice = (price: number) =>
       price
         .toFixed(0)
         .toString()
         .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.')
 
-    const formatNumber = (number) => {
-      number += ''
-      const x = number.split('.')
+    const formatNumber = (number: number) => {
+      const x = number.toString().split('.')
       let x1 = x[0]
       const x2 = x.length > 1 ? '.' + x[1] : ''
       const rgx = /(\d+)(\d{3})/

@@ -42,25 +42,25 @@ export const store = createStore<State>({
   },
 
   mutations: {
-    [API_REQUEST](state: State) {
+    [API_REQUEST](state) {
       state.status = RequestStatus.LOADING
     },
-    [API_SUCCESS](state: State) {
+    [API_SUCCESS](state) {
       state.status = RequestStatus.SUCCESS
     },
-    [API_ERROR](state: State) {
+    [API_ERROR](state) {
       state.status = RequestStatus.ERROR
     },
-    [FETCH_CARS](state: State, payload: Car[]) {
+    [FETCH_CARS](state, payload: Car[]) {
       state.cars = payload
     },
-    [ADD_CLIENT](state: State, payload: Client) {
+    [ADD_CLIENT](state, payload: Client) {
       state.clients.unshift(payload)
     },
-    [DELETE_CLIENT](state: State, payload: number) {
+    [DELETE_CLIENT](state, payload: number) {
       state.clients.splice(payload, 1)
     },
-    [WINDOW_WIDTH](state: State) {
+    [WINDOW_WIDTH](state) {
       state.windowWidth = window.innerWidth
     }
   },
@@ -130,6 +130,6 @@ export const store = createStore<State>({
 })
 
 // Simplifying typed useStore usage
-export function useStore() {
+export const useStore = (): Store<State> => {
   return baseUseStore(key)
 }
