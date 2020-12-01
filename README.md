@@ -2,6 +2,8 @@
 
 Stack: Vue 3 - Vite - TypeScript - Jest
 
+To run this project create a `.env` file from `.env.example`.
+
 ## Result
 
 - Responsive
