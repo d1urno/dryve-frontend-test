@@ -1,15 +1,18 @@
 <template>
-  <!-- prettier-ignore -->
-  <app-side-bar
-    class="absolute inset-0 z-30 w-64 top-16
-    transition-all ease-out transform shadow-lg
-    md:top-0 md:transform-none md:w-20 md:shadow-none"
-    :class="{ 'md:w-64': isOpen, '-translate-x-full': !isOpen }"
-    :is-open="isOpen"
-    @mouseover="showMenu(true)"
-    @mouseleave="showMenu(false)"
-    @navigation="showMenu(false, true)"
-  />
+  <transition name="slide-right">
+    <!-- prettier-ignore -->
+    <app-side-bar
+      v-if="isOpen || !isMobile"
+      class="absolute inset-0 z-30 w-64 top-16
+      transition-all ease-out transform shadow-lg
+      md:top-0 md:transform-none md:shadow-none"
+      :class="{ 'md:w-20': !isOpen }"
+      :is-open="isOpen"
+      @mouseover="!isMobile ? showMenu(true) : false"
+      @mouseleave="!isMobile ? showMenu(false) : false"
+      @navigation="showMenu(false, true)"
+    />
+  </transition>
   <app-nav-bar
     class="absolute inset-0 z-20 h-16 md:ml-20"
     :is-open="isOpen"
@@ -39,15 +42,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed, onMounted, onUnmounted } from 'vue'
 import AppSideBar from './components/AppSideBar.vue'
 import AppNavBar from './components/AppNavBar.vue'
 import AppFooter from './components/AppFooter.vue'
+import { WINDOW_WIDTH } from './store/store-constants'
+import { useStore } from './store'
 
 export default defineComponent({
   name: 'App',
   components: { AppSideBar, AppNavBar, AppFooter },
   setup() {
+    const store = useStore()
     // Menu handling
     const isOpen = ref(false)
     const waiting = ref(false)
@@ -60,7 +66,14 @@ export default defineComponent({
         waiting.value = false
       }, 200)
     }
-    return { isOpen, showMenu }
+
+    // Menu responsive behavior
+    const isMobile = computed(() => store.getters[WINDOW_WIDTH] < 768)
+    const onResize = () => store.commit(WINDOW_WIDTH)
+    onMounted(() => window.addEventListener('resize', onResize))
+    onUnmounted(() => window.removeEventListener('resize', onResize))
+
+    return { isOpen, showMenu, isMobile }
   }
 })
 </script>
@@ -69,6 +82,18 @@ export default defineComponent({
 .c-content {
   max-height: calc(100vh - theme('spacing.16'));
   height: calc(100vh - theme('spacing.16'));
+}
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+.fade-leave-active,
+.fade-enter-active {
+  @apply transition duration-300 ease-out;
+}
+.slide-right-enter-from,
+.slide-right-leave-to {
+  @apply -translate-x-full;
 }
 </style>
 
@@ -99,13 +124,5 @@ export default defineComponent({
 .scale-leave-active,
 .scale-enter-active {
   @apply transition duration-300 origin-top;
-}
-.fade-enter-from,
-.fade-leave-to {
-  @apply opacity-0;
-}
-.fade-leave-active,
-.fade-enter-active {
-  @apply transition duration-300 ease-out;
 }
 </style>

@@ -15,7 +15,8 @@ import {
   EDIT_CLIENT,
   FETCH_CARS,
   STATUS,
-  INTENTIONS
+  INTENTIONS,
+  WINDOW_WIDTH
 } from './store-constants'
 import { useIncludesText } from '../compositions/text-match'
 
@@ -25,6 +26,7 @@ export interface State {
   cars: Car[]
   clients: Client[]
   intentions: Intention[]
+  windowWidth: number
 }
 
 // define injection key
@@ -35,7 +37,8 @@ export const store = createStore<State>({
     status: RequestStatus.SUCCESS,
     cars: [],
     clients: [...ClientsData],
-    intentions: [...IntentionsData]
+    intentions: [...IntentionsData],
+    windowWidth: window.innerWidth
   },
 
   mutations: {
@@ -56,6 +59,9 @@ export const store = createStore<State>({
     },
     [DELETE_CLIENT](state: State, payload: number) {
       state.clients.splice(payload, 1)
+    },
+    [WINDOW_WIDTH](state: State) {
+      state.windowWidth = window.innerWidth
     }
   },
 
@@ -118,7 +124,8 @@ export const store = createStore<State>({
     [INTENTIONS]: (state) => (size = 10, page = 0) =>
       page
         ? state.intentions.slice((page - 1) * size, page * size)
-        : state.intentions
+        : state.intentions,
+    [WINDOW_WIDTH]: (state) => state.windowWidth
   }
 })
 
