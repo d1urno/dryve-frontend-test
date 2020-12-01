@@ -1,7 +1,6 @@
+import { defineAsyncComponent } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Clients from '../views/Clients.vue'
-import ClientsForm from '../views/ClientsForm.vue'
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -14,12 +13,12 @@ export const router = createRouter({
     {
       path: '/clientes',
       name: 'clients',
-      component: Clients
+      component: () => import('../views/Clients.vue')
     },
     {
       path: '/clientes/adicionar',
       name: 'add',
-      component: ClientsForm
+      component: () => import('../views/ClientsForm.vue')
     }
   ]
 })
