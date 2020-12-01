@@ -1,5 +1,5 @@
 <template>
-  <svg width="45%" height="45%" viewBox="0 0 42 42" class="donut">
+  <svg viewBox="0 0 42 42" class="w-5/12 donut h-5/12 sm:w-6/12 sm:h-6/12">
     <circle
       class="donut-hole"
       cx="21"

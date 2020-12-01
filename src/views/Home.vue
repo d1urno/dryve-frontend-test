@@ -5,19 +5,23 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 sm:col-span-1"
       >
-        <p class="text-black opacity-50 text-opacity-80">AVALIAÇÕES HOJE</p>
+        <p class="text-xs tracking-widest text-black text-opacity-50">
+          AVALIAÇÕES HOJE
+        </p>
         <div class="flex items-center justify-between">
           <p class="py-2 text-4xl text-black text-opacity-80">29</p>
           <span
             class="flex items-center justify-center rounded-full bg-blue-50 c-icon-dimensions"
           >
-            <icon type="car" class="w-10 h-10 text-blue-600" />
+            <icon type="car" class="w-8 h-8 text-blue-600" />
           </span>
         </div>
-        <div class="flex">
-          <icon type="arrow-up" class="w-6 h-6 -ml-1 text-blue-600" />
-          <p class="text-purple-500">36%</p>
-          <p class="ml-2 text-black opacity-50 text-opacity-80">desde ontem</p>
+        <div class="flex items-center -ml-1">
+          <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
+          <div class="flex items-baseline">
+            <p class="text-sm text-purple-700">36%</p>
+            <p class="ml-2 text-xs text-black text-opacity-50">desde ontem</p>
+          </div>
         </div>
       </section>
       <!-- End: Top Card 1 -->
@@ -26,19 +30,23 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 sm:col-span-1"
       >
-        <p class="text-black opacity-50 text-opacity-80">CARROS PUBLICADOS</p>
+        <p class="text-xs tracking-widest text-black text-opacity-50">
+          CARROS PUBLICADOS
+        </p>
         <div class="flex items-center justify-between">
           <p class="py-2 text-4xl text-black text-opacity-80">397</p>
           <span
             class="flex items-center justify-center rounded-full bg-blue-50 c-icon-dimensions"
           >
-            <icon type="devices" class="w-10 h-10 text-blue-600" />
+            <icon type="devices" class="w-8 h-8 text-blue-600" />
           </span>
         </div>
-        <div class="flex">
-          <icon type="arrow-up" class="w-6 h-6 -ml-1 text-blue-600" />
-          <p class="text-purple-500">4%</p>
-          <p class="ml-2 text-black opacity-50 text-opacity-80">este mês</p>
+        <div class="flex items-center -ml-1">
+          <icon type="arrow-up" class="w-5 h-5 text-blue-600" />
+          <div class="flex items-baseline">
+            <p class="text-sm text-purple-700">4%</p>
+            <p class="ml-2 text-xs text-black text-opacity-50">este mês</p>
+          </div>
         </div>
       </section>
       <!-- End: Top Card 2 -->
@@ -47,7 +55,7 @@
       <section
         class="col-span-2 px-6 py-3 bg-white border border-black rounded border-opacity-10 md:col-span-1"
       >
-        <p class="text-black opacity-50 text-opacity-80">
+        <p class="text-xs tracking-widest text-black text-opacity-50">
           TICKET MÉDIO DO ESTOQUE
         </p>
         <div class="flex items-center justify-between">
@@ -55,13 +63,15 @@
           <span
             class="flex items-center justify-center rounded-full bg-blue-50 c-icon-dimensions"
           >
-            <icon type="money" class="w-10 h-10 text-blue-600" />
+            <icon type="money" class="w-8 h-8 text-blue-600" />
           </span>
         </div>
-        <div class="flex">
-          <icon type="arrow-down" class="w-6 h-6 mt-px -ml-1 text-red-500" />
-          <p class="text-red-500">6%</p>
-          <p class="ml-2 text-black opacity-50 text-opacity-80">este mês</p>
+        <div class="flex items-center -ml-1">
+          <icon type="arrow-down" class="w-5 h-5 text-red-500" />
+          <div class="flex items-baseline">
+            <p class="text-sm text-red-500">6%</p>
+            <p class="ml-2 text-xs text-black text-opacity-50">este mês</p>
+          </div>
         </div>
       </section>
       <!-- End: Top Card 3 -->
@@ -70,7 +80,7 @@
       <section
         class="col-span-2 pt-5 bg-white border border-black rounded border-opacity-10"
       >
-        <div class="flex justify-between px-6">
+        <div class="flex justify-between px-6 text-sm">
           <p>Últimas avaliações</p>
           <button type="button" class="flex pt-1 pl-2 -mt-1 -ml-2">
             <span>Hoje</span>
@@ -83,15 +93,15 @@
 
         <!-- Car list -->
         <div
-          class="flex px-6 py-5 text-xs tracking-widest text-black uppercase border-b opacity-50 text-opacity-80"
+          class="flex px-6 py-5 tracking-widest text-black text-opacity-50 uppercase border-b text-tiny"
         >
-          <p class="flex-1">Dados do veículo</p>
-          <div class="flex flex-1">
-            <p class="flex-1">Valor</p>
-            <p class="flex-1">Status</p>
+          <p class="w-7/12">Dados do veículo</p>
+          <div class="flex w-6/12">
+            <p class="w-6/12">Valor</p>
+            <p class="w-6/12">Status</p>
           </div>
         </div>
-        <div class="overflow-y-auto divide-y c-list-max-height">
+        <div class="overflow-y-auto divide-y c-list-max-height c-custom-bar">
           <card-car
             v-for="car in cars"
             :key="car.vehicle_uuid"
@@ -117,8 +127,10 @@
         <section
           class="flex-1 px-6 pt-5 mb-5 bg-white border border-black rounded border-opacity-10"
         >
-          <p class="mb-8 text-black text-opacity-80">Top intenções de compra</p>
-          <ul class="divide-y">
+          <p class="mb-8 text-sm text-black text-opacity-80">
+            Top intenções de compra
+          </p>
+          <ul class="text-sm divide-y">
             <li
               v-for="intention in intentions"
               :key="intention.id"
@@ -146,36 +158,39 @@
         <section
           class="flex-1 px-6 py-5 mb-auto bg-white border border-black rounded border-opacity-10"
         >
-          <p class="flex items-center mb-4 text-black text-opacity-80">
-            <span>Preços - Dryve x KBB</span>
-            <icon type="help" class="w-5 h-5 ml-2 text-black text-opacity-20" />
+          <p class="flex items-center mb-5 text-sm text-black text-opacity-80">
+            <span class="inline-block mr-1">Preços - Dryve x KBB</span>
+            <icon
+              type="help"
+              class="w-4 h-4 -mt-px text-black text-opacity-20"
+            />
           </p>
           <figure class="flex items-center">
             <pie-chart class="-m-3" />
             <div
               class="flex flex-col items-center justify-center flex-1 w-full"
             >
-              <div class="ml-3">
+              <div class="ml-3 text-sm">
                 <span class="block space-x-2 text-black text-opacity-80">
                   <span
                     class="inline-block w-2 h-2 mb-px bg-blue-500 rounded-full"
                   />
                   <span>Na média</span
-                  ><span class="text-xs text-gray-400">60%</span>
+                  ><span class="text-xs text-gray-300">60%</span>
                 </span>
                 <span class="block space-x-2 text-black text-opacity-80">
                   <span
                     class="inline-block w-2 h-2 mb-px bg-red-500 rounded-full"
                   />
                   <span>Acima da média</span
-                  ><span class="text-xs text-gray-400">60%</span>
+                  ><span class="text-xs text-gray-300">60%</span>
                 </span>
                 <span class="block space-x-2 text-black text-opacity-80">
                   <span
                     class="inline-block w-2 h-2 mb-px bg-yellow-500 rounded-full"
                   />
                   <span>Abaixo da média</span
-                  ><span class="text-xs text-gray-400">60%</span>
+                  ><span class="text-xs text-gray-300">60%</span>
                 </span>
               </div>
             </div>
@@ -216,6 +231,13 @@ export default defineComponent({
   height: 64px;
 }
 .c-list-max-height {
-  max-height: 35rem;
+  max-height: 33rem;
+}
+/* Works on Chrome/Edge/Safari */
+.c-custom-bar::-webkit-scrollbar {
+  @apply w-2 bg-white;
+}
+.c-custom-bar::-webkit-scrollbar-thumb {
+  @apply bg-black rounded bg-opacity-10;
 }
 </style>

@@ -1,21 +1,21 @@
 <template>
   <div class="py-5 md:flex">
     <!-- Car data -->
-    <figure class="flex flex-1 my-auto">
+    <figure class="flex my-auto md:w-7/12">
       <img
         :src="car.image"
         :alt="`${car.brand_name} ${car.model_name}`"
         class="rounded ring-1 ring-black ring-opacity-20 c-img-dimensions"
       />
       <figcaption class="ml-3">
-        <p class="font-bold leading-tight text-black">
+        <p class="text-xs font-bold leading-tight text-blue-900 uppercase">
           {{ `${car.brand_name} ${car.model_name}` }}
         </p>
-        <p class="text-xs text-gray-400">{{ car.version_name }}</p>
-        <p class="text-xs text-gray-400">
+        <p class="text-gray-400 uppercase text-tiny">{{ car.version_name }}</p>
+        <p class="text-gray-400 uppercase text-tiny">
           {{ `${car.model_year} - ${car.fuel_type}` }}
         </p>
-        <p class="text-xs text-gray-400">
+        <p class="text-gray-400 uppercase text-tiny">
           {{ `${car.transmission_type} - ${formatNumber(car.mileage)} KM` }}
         </p>
       </figcaption>
@@ -23,27 +23,34 @@
     <!-- End: Car data -->
 
     <!-- Announce data -->
-    <div class="flex-1 md:flex">
+    <div class="md:w-6/12 md:flex">
       <div
-        class="flex items-baseline justify-center flex-1 py-3 mt-3 md:my-auto md:block md:py-0"
+        class="flex items-baseline justify-center flex-1 py-3 mt-3 space-x-8 md:space-x-0 md:my-auto md:block md:py-0"
       >
-        <p class="px-2 text-xs leading-none text-gray-400 md:px-0">ANÚNCIO</p>
-        <p class="text-sm font-bold md:mb-2">
-          R$ {{ formatPrice(car.ad_selling_price) }}
-        </p>
-        <span class="ml-2 text-xs leading-none text-gray-400 md:hidden">-</span>
-        <p class="px-2 text-xs leading-none text-gray-400 md:px-0">
-          MÍNIMO ACEITO
-        </p>
-        <p class="text-sm text-gray-400">
-          R$ {{ formatPrice(car.ad_selling_price * 0.97) }}
-        </p>
+        <div class="text-center md:text-left">
+          <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
+            ANÚNCIO
+          </p>
+          <p class="text-xs font-bold text-blue-900 md:mb-1">
+            R$ {{ formatPrice(car.ad_selling_price) }}
+          </p>
+        </div>
+        <div class="text-center md:text-left">
+          <p class="px-2 leading-none text-gray-400 text-tiny md:px-0">
+            MÍNIMO ACEITO
+          </p>
+          <p class="text-xs text-gray-300">
+            R$ {{ formatPrice(car.ad_selling_price * 0.97) }}
+          </p>
+        </div>
       </div>
       <div class="flex-1 my-auto text-center">
-        <p class="px-4 py-2 mb-3 text-xs text-gray-500 rounded-full bg-blue-50">
+        <p
+          class="px-4 py-2 mb-2 text-xs text-gray-500 rounded-full whitespace-nowrap bg-blue-50"
+        >
           Aguardando precificação
         </p>
-        <time class="text-xs text-gray-400">18/04/2020 às 14:35</time>
+        <time class="text-xs text-gray-300">18/04/2020 às 14:35</time>
       </div>
     </div>
     <!-- End: Announce data -->

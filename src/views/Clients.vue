@@ -9,7 +9,7 @@
           class="flex items-center h-full px-3 space-x-2 bg-white border border-black rounded border-opacity-10"
         >
           <icon type="filter" class="w-5 h-5 text-blue-600" />
-          <span class="py-2 text-purple-500 sm:py-0">FILTRAR</span>
+          <span class="py-2 text-sm text-purple-700 sm:py-0">FILTRAR</span>
         </button>
         <!-- End:Filter -->
 
@@ -35,10 +35,10 @@
       </div>
       <router-link
         to="/clientes/adicionar"
-        class="flex inline-flex items-center px-5 text-white bg-purple-700 rounded"
+        class="flex inline-flex items-center px-5 text-white transition bg-purple-700 rounded hover:bg-purple-600"
       >
         <icon type="add" class="w-3 h-3 text-white" />
-        <span class="py-2 ml-2">ADICIONAR</span>
+        <span class="py-2 ml-2 text-sm">ADICIONAR</span>
       </router-link>
     </div>
     <!-- End: Actions -->
@@ -50,18 +50,28 @@
       <table class="relative w-full overflow-hidden">
         <thead>
           <tr class="text-left">
-            <th class="w-16"><input type="checkbox" /></th>
-            <th class="opacity-50 w-80">Nome</th>
-            <th class="w-64 opacity-50">Status</th>
-            <th class="opacity-50 w-72">Telefone</th>
-            <th class="opacity-50">E-mail</th>
+            <th class="w-16">
+              <input
+                type="checkbox"
+                class="border-2 border-black rounded-sm border-opacity-40"
+              />
+            </th>
+            <th class="w-80">Nome</th>
+            <th class="w-64">Status</th>
+            <th class="w-72">Telefone</th>
+            <th>E-mail</th>
             <th></th>
           </tr>
         </thead>
         <!-- Table body -->
         <transition-group :name="transition" tag="tbody">
           <tr v-for="client in clients" :key="client.id">
-            <td class="border-b"><input type="checkbox" /></td>
+            <td class="border-b">
+              <input
+                type="checkbox"
+                class="border-2 border-black rounded-sm border-opacity-40"
+              />
+            </td>
             <td>{{ `${client.name} ${client.last_name}` }}</td>
             <td>
               <p
@@ -99,7 +109,7 @@
             id="items"
             :value="items"
             name="items"
-            class="w-12 p-0 ml-2 border-none focus:ring-0"
+            class="w-12 p-0 ml-2 text-sm border-none focus:ring-0"
             @change="handleSizeChange"
           >
             <option value="5">5</option>
@@ -222,10 +232,10 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 th {
-  @apply py-5 pl-5 text-xs tracking-widest text-black uppercase border-b text-opacity-80 whitespace-nowrap;
+  @apply py-5 pl-5 tracking-widest text-black uppercase border-b text-opacity-40 text-tiny whitespace-nowrap;
 }
 td {
-  @apply py-5 pl-5 text-black border-b text-opacity-80 whitespace-nowrap;
+  @apply py-5 pl-5 text-sm text-black border-b text-opacity-80 whitespace-nowrap;
 }
 
 .slide-fade-left-enter-from {

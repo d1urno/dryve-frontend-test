@@ -19,13 +19,19 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
-      red: colors.red,
+      gray: {
+        ...colors.coolGray,
+        100: '#f3f4f6',
+        200: '#e0e0e0',
+        300: '#a5abb7',
+        400: '#768095'
+      },
+      red: { ...colors.red, 500: '#fc4a40' },
       yellow: colors.amber,
       green: colors.emerald,
-      blue: colors.blue,
+      blue: { ...colors.blue, 50: '#f3f7ff', 600: '#0065ff', 900: '#1e2c4c' },
       indigo: colors.indigo,
-      purple: colors.violet,
+      purple: { ...colors.violet, 700: '#6200ee' },
       pink: colors.pink
     },
     spacing: {
@@ -121,7 +127,7 @@ module.exports = {
       full: '9999px'
     },
     borderWidth: {
-      DEFAULT: '1px',
+      DEFAULT: '1.5px',
       0: '0px',
       2: '2px',
       4: '4px',
@@ -212,6 +218,7 @@ module.exports = {
       ]
     },
     fontSize: {
+      tiny: ['0.625rem', { lineHeight: '1rem' }],
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.25rem' }],
       base: ['1rem', { lineHeight: '1.5rem' }],
@@ -219,7 +226,7 @@ module.exports = {
       xl: ['1.25rem', { lineHeight: '1.75rem' }],
       '2xl': ['1.5rem', { lineHeight: '2rem' }],
       '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+      '4xl': ['2.125rem', { lineHeight: '2.5rem' }],
       '5xl': ['3rem', { lineHeight: '1' }],
       '6xl': ['3.75rem', { lineHeight: '1' }],
       '7xl': ['4.5rem', { lineHeight: '1' }],

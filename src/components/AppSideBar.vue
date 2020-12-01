@@ -1,7 +1,5 @@
 <template>
-  <aside
-    class="pt-8 space-y-5 overflow-x-hidden bg-white border-l-2 border-r-2"
-  >
+  <aside class="pt-8 space-y-5 overflow-x-hidden bg-white border-r">
     <figure class="flex items-center w-56 space-x-3">
       <!-- prettier-ignore -->
       <img
@@ -27,25 +25,34 @@
     </figure>
 
     <!-- Navigation -->
-    <ul class="w-56 mx-3 space-y-1">
-      <app-side-bar-link :is-open="isOpen" label="Início" icon="home" to="/" />
+    <ul class="w-56 mx-3 space-y-1 pl-px">
+      <app-side-bar-link
+        :is-open="isOpen"
+        label="Início"
+        icon="home"
+        to="/"
+        @toggle="$emit('toggle')"
+      />
       <app-side-bar-link
         :is-open="isOpen"
         label="Clientes"
         icon="profile"
         to="/clientes"
+        @toggle="$emit('toggle')"
       />
       <app-side-bar-link
         :is-open="isOpen"
         label="Veículos"
         icon="car"
         to="/veiculos"
+        @toggle="$emit('toggle')"
       />
       <app-side-bar-link
         :is-open="isOpen"
         label="Triangulação"
         icon="triangle"
         to="/triangulacao"
+        @toggle="$emit('toggle')"
       />
       <app-side-bar-link
         :is-open="isOpen"
@@ -53,6 +60,7 @@
         icon="wallet"
         disabled
         to="/financeiro"
+        @toggle="$emit('toggle')"
       />
     </ul>
     <!-- End: Navigation -->
@@ -73,6 +81,7 @@ export default defineComponent({
       required: true
     }
   },
+  emits: ['toggle'],
   setup() {
     return {}
   }
