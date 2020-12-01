@@ -31,28 +31,28 @@
         label="Início"
         icon="home"
         to="/"
-        @toggle="$emit('toggle')"
+        @navigation="$emit('navigation')"
       />
       <app-side-bar-link
         :is-open="isOpen"
         label="Clientes"
         icon="profile"
         to="/clientes"
-        @toggle="$emit('toggle')"
+        @navigation="$emit('navigation')"
       />
       <app-side-bar-link
         :is-open="isOpen"
         label="Veículos"
         icon="car"
         to="/veiculos"
-        @toggle="$emit('toggle')"
+        @navigation="$emit('navigation')"
       />
       <app-side-bar-link
         :is-open="isOpen"
         label="Triangulação"
         icon="triangle"
         to="/triangulacao"
-        @toggle="$emit('toggle')"
+        @navigation="$emit('navigation')"
       />
       <app-side-bar-link
         :is-open="isOpen"
@@ -60,7 +60,7 @@
         icon="wallet"
         disabled
         to="/financeiro"
-        @toggle="$emit('toggle')"
+        @navigation="$emit('navigation')"
       />
     </ul>
     <!-- End: Navigation -->
@@ -81,7 +81,7 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['toggle'],
+  emits: ['navigation'],
   setup() {
     return {}
   }

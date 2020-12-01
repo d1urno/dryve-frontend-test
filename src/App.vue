@@ -8,7 +8,7 @@
     :is-open="isOpen"
     @mouseover="showMenu(true)"
     @mouseleave="showMenu(false)"
-    @toggle="showMenu(false, true)"
+    @navigation="showMenu(false, true)"
   />
   <app-nav-bar
     class="absolute inset-0 z-20 h-16 md:ml-20"
