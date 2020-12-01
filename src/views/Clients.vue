@@ -214,10 +214,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.c-icon-dimensions {
-  width: 64px;
-  height: 64px;
-}
 .c-list-max-height {
   max-height: 35rem;
 }
