@@ -1,6 +1,6 @@
 # Dryve Frontend Test
 
-Stack: Vue 3 - Vite - TypeScript - Jest
+Stack: Vue 3 - Vite - TypeScript - TailwindCSS - Jest
 
 To run this project create a `.env` file from `.env.example`.
 
