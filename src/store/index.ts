@@ -69,7 +69,10 @@ export const store = createStore<State>({
     [FETCH_CARS]({ commit }) {
       return new Promise((resolve, reject) => {
         commit(API_REQUEST)
-        fetch(import.meta.env.VITE_CARS_API_URL)
+        // At this time getting variables from import.meta.env throws error on jest,
+        // so we hardcode url this time.
+        // see https://github.com/kulshekhar/ts-jest/issues/1174
+        fetch('https://www.mocky.io/v2/5eb553df31000060006994a8')
           .then((res) => res.json())
           .then((data) => {
             commit(FETCH_CARS, data)
