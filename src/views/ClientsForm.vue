@@ -192,8 +192,11 @@
       class="p-5 border-b border-l border-r border-black rounded-b sm:flex sm:space-x-4 bg-blue-50 border-opacity-10"
     >
       <button
-        class="block px-12 py-2 mx-auto text-white transition bg-purple-700 rounded hover:bg-purple-600 sm:mx-0"
+        class="block px-12 py-2 mx-auto text-white transition bg-gray-300 rounded sm:mx-0"
         type="submit"
+        data-test-id="submit"
+        :disabled="!isValid"
+        :class="{ 'bg-purple-700 hover:bg-purple-600': isValid }"
       >
         SALVAR
       </button>
@@ -210,7 +213,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import { Client } from '../types'
 import { useStore } from '../store'
 import { ADD_CLIENT } from '../store/store-constants'
@@ -242,7 +245,18 @@ export default defineComponent({
       state: ''
     })
 
+    // Basic validation
+    const isValid = computed(
+      () =>
+        payload.value.name.length > 0 &&
+        payload.value.last_name.length > 0 &&
+        payload.value.email.length > 0 &&
+        payload.value.phone.length > 0 &&
+        payload.value.cep.length > 0
+    )
+
     const onSubmit = () => {
+      if (!isValid.value) return
       router.push('/clientes')
       // Add little delay to see list transitions
       setTimeout(() => {
@@ -336,7 +350,8 @@ export default defineComponent({
       cep,
       number,
       fetchCep,
-      debouncedPhoneMask
+      debouncedPhoneMask,
+      isValid
     }
   }
 })
