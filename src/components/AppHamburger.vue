@@ -6,6 +6,7 @@
     type="button"
     aria-label="Menu"
     aria-controls="navigation"
+    data-test-id="toggle"
     :class="{ 'is-active': isOpen }"
     @click="$emit('toggle')"
   >

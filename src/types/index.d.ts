@@ -1,9 +1,3 @@
-declare global {
-  interface ImportMeta {
-    env: any
-  }
-}
-
 export interface Car {
   evaluation_type: string
   version_uuid: string

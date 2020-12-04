@@ -11,6 +11,7 @@
         'pointer-events-none': disabled || $route.path === to,
         'text-blue-600 text-opacity-100': $route.path === to
       }"
+      data-test-id="link"
       @click.capture="$emit('navigation')"
     >
       <icon
