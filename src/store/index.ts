@@ -36,8 +36,8 @@ export const store = createStore<State>({
   state: {
     status: RequestStatus.SUCCESS,
     cars: [],
-    clients: [...ClientsData],
-    intentions: [...IntentionsData],
+    clients: ClientsData,
+    intentions: IntentionsData,
     windowWidth: window.innerWidth
   },
 
