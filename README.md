@@ -27,3 +27,8 @@ yarn dev
 ```
 yarn build
 ```
+
+#### Run unit tests
+```
+yarn test
+```
