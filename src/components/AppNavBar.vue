@@ -41,9 +41,6 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['toggle'],
-  setup() {
-    return {}
-  }
+  emits: ['toggle']
 })
 </script>
